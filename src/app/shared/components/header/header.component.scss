@@ -62,13 +62,56 @@
 
 .logo-search {
   height: 8rem;
-  border: 1px solid red;
+  border-bottom: 1px solid $primary-color;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  div:first-child{
+    grid-column: 1/2;
+    grid-row: 1/1;
+  }
+
+  div:last-child{
+    grid-column: 2/3;
+    grid-row: 1/1;
+  }
+
 
   .logo {
-    height: 100%;
+    height: 8rem;
     padding: 2px 0px;
     img {
+      width: 40%;
       height: 100%;
+    }
+  }
+
+  .search{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    input{
+      width: 70%;
+      height: 2.5rem;
+      border-radius: 0;
+      border: 2px solid $primary-color;
+      border-right: 0;
+      outline: none;
+
+      padding-left: 1rem;
+    }
+
+    .icon-search{
+      background: $primary-color;
+      height: 2.5rem;
+      cursor: pointer;
+      padding: 0.2rem;
+
+      img{
+        height: 100%;
+      }
     }
   }
 }
