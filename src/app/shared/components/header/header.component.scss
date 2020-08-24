@@ -115,3 +115,32 @@
     }
   }
 }
+
+.icons{
+  // height: 8rem;
+  border-bottom: 1px solid $primary-color;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+
+  .icon{
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    
+
+    a{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-transform: uppercase;
+      color: $primary-color;
+      font-weight: 600;
+      img{
+        width: 70%;
+        height: 70%;
+      }
+    }
+  }
+}
