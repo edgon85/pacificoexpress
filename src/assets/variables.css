@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "bebas_kai";
+  src: url("/assets/fonts/bebas_kai/BebasKai.ttf") format("woff2"), url("/assets/fonts/bebas_kai/BebasKai.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "berlin-sans-fb-regular";
+  src: url("/assets/fonts/BerlinSansFBRegular/BerlinSansFBRegular.ttf") format("woff2"), url("/assets/fonts/BerlinSansFBRegular/BerlinSansFBRegular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "fontello";
+  src: url("/assets/fonts/iconos-principales/font/fontello.eot?48319145");
+  src: url("/assets/fonts/iconos-principales/font/fontello.eot?48319145#iefix") format("embedded-opentype"), url("/assets/fonts/iconos-principales/font/fontello.woff?48319145") format("woff"), url("/assets/fonts/iconos-principales/font/fontello.ttf?48319145") format("truetype"), url("/assets/fonts/iconos-principales/font/fontello.svg?48319145#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/*# sourceMappingURL=variables.css.map */

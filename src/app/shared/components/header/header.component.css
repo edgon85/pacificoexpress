@@ -1,0 +1,234 @@
+@font-face {
+  font-family: "bebas_kai";
+  src: url("/assets/fonts/bebas_kai/BebasKai.ttf") format("woff2"), url("/assets/fonts/bebas_kai/BebasKai.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "berlin-sans-fb-regular";
+  src: url("/assets/fonts/BerlinSansFBRegular/BerlinSansFBRegular.ttf") format("woff2"), url("/assets/fonts/BerlinSansFBRegular/BerlinSansFBRegular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "fontello";
+  src: url("/assets/fonts/iconos-principales/font/fontello.eot?48319145");
+  src: url("/assets/fonts/iconos-principales/font/fontello.eot?48319145#iefix") format("embedded-opentype"), url("/assets/fonts/iconos-principales/font/fontello.woff?48319145") format("woff"), url("/assets/fonts/iconos-principales/font/fontello.ttf?48319145") format("truetype"), url("/assets/fonts/iconos-principales/font/fontello.svg?48319145#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.header-top {
+  background: #1c2240;
+}
+
+.header-top .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 2.3rem;
+}
+
+.header-top .container .contact-icons ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  justify-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 2rem;
+}
+
+.header-top .container .contact-icons ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header-top .container .contact-icons ul li img {
+  height: 100%;
+  margin-right: 5px;
+}
+
+.header-top .container .contact-icons ul li a {
+  font-size: 12px;
+  color: #fff;
+}
+
+.header-top .container .social-icons ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  justify-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 2rem;
+}
+
+.header-top .container .social-icons ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header-top .container .social-icons ul li a {
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-top: 2px;
+}
+
+.header-top .container .social-icons ul li a img {
+  width: 60%;
+}
+
+.logo-search {
+  height: 8rem;
+  border-bottom: 1px solid #1c2240;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+}
+
+.logo-search div:first-child {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  -ms-grid-row: 1;
+  grid-row: 1/1;
+}
+
+.logo-search div:last-child {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 1;
+  grid-row: 1/1;
+}
+
+.logo-search .logo {
+  height: 8rem;
+  padding: 2px 0px;
+}
+
+.logo-search .logo img {
+  width: 40%;
+  height: 100%;
+}
+
+.logo-search .search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.logo-search .search input {
+  width: 70%;
+  height: 2.5rem;
+  border-radius: 0;
+  border: 2px solid #1c2240;
+  border-right: 0;
+  outline: none;
+  padding-left: 1rem;
+}
+
+.logo-search .search .icon-search {
+  background: #1c2240;
+  height: 2.5rem;
+  cursor: pointer;
+  padding: 0.2rem;
+}
+
+.logo-search .search .icon-search img {
+  height: 100%;
+}
+
+.icons {
+  height: 8rem;
+  border-bottom: 1px solid #1c2240;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
+}
+
+.icons .icon a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-transform: uppercase;
+  color: #1c2240;
+  font-weight: 600;
+  height: 100%;
+  width: 100%;
+}
+
+.icons .icon a i {
+  font-size: 6rem;
+  color: green;
+}
+
+.icons .icon a i:hover {
+  color: red;
+}
+
+.icons .icon a img {
+  width: 40%;
+}
+/*# sourceMappingURL=header.component.css.map */

@@ -66,16 +66,15 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 
-  div:first-child{
+  div:first-child {
     grid-column: 1/2;
     grid-row: 1/1;
   }
 
-  div:last-child{
+  div:last-child {
     grid-column: 2/3;
     grid-row: 1/1;
   }
-
 
   .logo {
     height: 8rem;
@@ -86,13 +85,13 @@
     }
   }
 
-  .search{
+  .search {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 
-    input{
+    input {
       width: 70%;
       height: 2.5rem;
       border-radius: 0;
@@ -103,43 +102,66 @@
       padding-left: 1rem;
     }
 
-    .icon-search{
+    .icon-search {
       background: $primary-color;
       height: 2.5rem;
       cursor: pointer;
       padding: 0.2rem;
 
-      img{
+      img {
         height: 100%;
       }
     }
   }
 }
 
-.icons{
+.icons {
   // height: 8rem;
   border-bottom: 1px solid $primary-color;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-
-  .icon{
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
-    
-
-    a{
+  .icon {
+    padding: 0.5rem 0;
+    a {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-transform: uppercase;
-      color: $primary-color;
+      color: $secondary-color;
       font-weight: 600;
-      img{
-        width: 70%;
-        height: 70%;
+      height: 100%;
+      width: 100%;
+      position: relative;
+      &::after {
+        content: "";
+        display: block;
+        // background: #000;
+        // position: absolute;
+        border-top: 10px solid $secondary-color;
+        border-right: 10px solid transparent;
+        border-left: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        &:hover {
+          border-top: 10px solid $primary-color;
+          border-right: 10px solid transparent;
+          border-left: 10px solid transparent;
+          border-bottom: 10px solid transparent;
+        }
+      }
+
+      i {
+        font-size: 6rem;
+        color: $secondary-color;
+
+        &:hover {
+          color: $color-white;
+          background: $primary-color;
+        }
+      }
+
+      &:hover {
+        color: $primary-color;
       }
     }
   }
