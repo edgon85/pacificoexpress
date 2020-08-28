@@ -27,7 +27,7 @@ export class BannerComponent implements OnInit, AfterViewInit {
       spaceBetween: 30,
       loop: false,
       autoplay: {
-        delay: 5000,
+        delay: 3000,
         disableOnInteraction: false,
       },
     });

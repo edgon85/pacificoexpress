@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="logo-search container">
-        <div class="logo">
+        <div class="logo" [routerLink]="['/inicio']">
             <img src="assets/images/logos/logo.png" alt="">
         </div>
         <div class="search">
@@ -34,22 +34,22 @@
 
     <div class="icons container">
         <div class="icon">
-            <a href="#"><i class="demo-icon icon-transportes">&#xe800;</i> vehiculos</a>
+            <a [routerLink]="['/vehiculos']" routerLinkActive="active"><i class="demo-icon icon-transportes">&#xe800;</i> vehículos</a>
         </div>
         <div class="icon">
-            <a href="#"><i class="demo-icon icon-repuestos">&#xe803;</i> repuestos</a>
+            <a [routerLink]="['/repuestos']"><i class="demo-icon icon-repuestos">&#xe803;</i> repuestos</a>
         </div>
         <div class="icon">
-            <a href="#"><i class="demo-icon icon-fletes">&#xe802;</i> transportes</a>
+            <a [routerLink]="['/transportes']"><i class="demo-icon icon-fletes">&#xe802;</i> transportes</a>
         </div>
         <div class="icon">
-            <a href="#"><i class="demo-icon icon-cotizador">&#xe801;</i> cotizador</a>
+            <a [routerLink]="['/cotizador']"><i class="demo-icon icon-cotizador">&#xe801;</i> cotizador</a>
         </div>
         <div class="icon">
-            <a href="#"><i class="demo-icon icon-transportes-gps">&#xe805;</i> gps</a>
+            <a [routerLink]="['/gps']"><i class="demo-icon icon-transportes-gps">&#xe805;</i> gps</a>
         </div>
         <div class="icon">
-            <a href="#"><i class="demo-icon icon-taller">&#xe804;</i> Taller</a>
+            <a [routerLink]="['/taller']"><i class="demo-icon icon-taller">&#xe804;</i> Taller</a>
         </div>
     </div>
 </section>
