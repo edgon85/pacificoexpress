@@ -16,11 +16,7 @@
                         <label>Ruta</label>
                         <div class="custom-select">
                             <select name="" id="">
-                                <option value="">1</option>
-                                <option value="">2</option>
-                                <option value="">3</option>
-                                <option value="">4</option>
-                                <option value="">5</option>
+                                <option *ngFor="let ruta of rutas" [value]=ruta.id>{{ruta.name}}</option>
                             </select>
                         </div>
                     </div>
