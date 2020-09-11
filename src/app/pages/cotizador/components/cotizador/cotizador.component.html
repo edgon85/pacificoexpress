@@ -1,4 +1,4 @@
-<div class="container">
+<div class="myContainer">
     <div class="cotizador">
         <div class="sidebar">
             <p>Cotizador de Vehículos</p>
@@ -36,13 +36,15 @@
                         <div class="content-input">
                             <div class="custom-select">
                                 <select formControlName="temperatura">
-                                    <option class="select-option" value="" disabled selected hidden>Seleccione una opción</option>
+                                    <option class="select-option" value="" disabled selected hidden>Seleccione una
+                                        opción</option>
                                     <option *ngFor="let temperatura of temperaturas" [value]="temperatura.id">
                                         {{ temperatura.name }}
                                     </option>
                                 </select>
                             </div>
-                            <small *ngIf="validarCampo('temperatura')" class="text-danger">* Este campo es requerido</small>
+                            <small *ngIf="validarCampo('temperatura')" class="text-danger">* Este campo es
+                                requerido</small>
                         </div>
                     </div>
                     <!-- <div class="input-field">
@@ -65,45 +67,47 @@
 
                                 <div>
                                     <input formControlName="medidasFurgon" type="radio" name="medidasFurgon"
-                                    id="medidadsFurgon1" value="option1" />
+                                        id="medidadsFurgon1" value="option1" />
                                     <label for="medidadsFurgon1">48 pies</label>
                                 </div>
                                 <div>
                                     <input formControlName="medidasFurgon" type="radio" name="medidasFurgon"
-                                    id="medidadsFurgon2" value="option2" />
+                                        id="medidadsFurgon2" value="option2" />
                                     <label for="medidadsFurgon2">53 pies</label>
                                 </div>
                             </div>
-                            <small *ngIf="validarCampo('medidasFurgon')" class="text-danger">* Este campo es requerido</small>
-                            </div>
+                            <small *ngIf="validarCampo('medidasFurgon')" class="text-danger">* Este campo es
+                                requerido</small>
+                        </div>
                     </div>
 
                     <div class="input-field">
                         <label for="">Nombre</label>
-                            <div class="content-input">
+                        <div class="content-input">
                             <input formControlName="nombre" type="text" class="input" placeholder="Nombre" />
                             <small *ngIf="validarCampo('nombre')" class="text-danger">* Este campo es requerido</small>
                         </div>
                     </div>
                     <div class="input-field">
                         <label for="">Empresa</label>
-                            <div class="content-input">
+                        <div class="content-input">
                             <input formControlName="empresa" type="text" class="input" placeholder="Empresa" />
                             <small *ngIf="validarCampo('empresa')" class="text-danger">* Este campo es requerido</small>
                         </div>
                     </div>
                     <div class="input-field">
                         <label for="">Correo</label>
-                            <div class="content-input">
+                        <div class="content-input">
                             <input formControlName="correo" type="email" class="input" placeholder="Correo" />
                             <small *ngIf="validarCampo('correo')" class="text-danger">* Este campo es requerido</small>
                         </div>
                     </div>
                     <div class="input-field">
                         <label for="">Teléfono</label>
-                            <div class="content-input">
+                        <div class="content-input">
                             <input formControlName="telefono" type="number" class="input" placeholder="Teléfono" />
-                            <small *ngIf="validarCampo('telefono')" class="text-danger">* Este campo es requerido</small>
+                            <small *ngIf="validarCampo('telefono')" class="text-danger">* Este campo es
+                                requerido</small>
                         </div>
                     </div>
                 </form>

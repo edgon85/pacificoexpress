@@ -1,6 +1,6 @@
 @import "../../../../../assets/variables.scss";
 
-.container {
+.myContainer {
   min-height: 80vh;
 }
 
@@ -40,15 +40,14 @@
 
     .image-gps {
       grid-area: section_1;
-    //   border: 1px solid red;
+      //   border: 1px solid red;
       height: 50vh;
-      background-image: url('../../../../../assets/images/gps/transportes-gps.png');
+      background-image: url("../../../../../assets/images/gps/transportes-gps.png");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       border-radius: 10px;
       z-index: 2;
-    
 
       img {
         width: 100%;
@@ -58,10 +57,10 @@
 
     .detail-gps {
       grid-area: section_2;
-    //   border: 1px solid blue;
+      //   border: 1px solid blue;
       padding: 1em 0;
-      p{
-          padding: 1em 0;
+      p {
+        padding: 1em 0;
       }
     }
   }

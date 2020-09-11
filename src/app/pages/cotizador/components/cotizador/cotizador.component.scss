@@ -1,6 +1,6 @@
 @import "../../../../../assets/variables.scss";
 
-.container {
+.myContainer {
   min-height: 80vh;
 }
 
@@ -85,7 +85,7 @@
             &:focus {
               border: 1px solid $primary-color;
             }
-            &:invalid{
+            &:invalid {
               color: red;
             }
           }
@@ -100,7 +100,7 @@
             pointer-events: none;
           }
 
-          .select-option{
+          .select-option {
             color: gray;
           }
         }
@@ -111,12 +111,11 @@
 
         .content-input {
           width: 100%;
-          .inline{
+          .inline {
             display: flex;
             flex-direction: row;
             justify-content: center;
           }
-
         }
         .text-danger {
           font-size: 0.5em;
