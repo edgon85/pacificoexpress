@@ -1,3 +1,12 @@
+@import "../../../../assets/variables.scss";
+
+.container {
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
 /*=== 8. SIDEBARS ===*/
 ul li {
   list-style-type: none;
@@ -9,7 +18,7 @@ ul li {
 
 .sidebar-nav > ul > li.active > a {
   color: #000000;
-  border-color: #2e7d21;
+  border-color: $primary-color;
 }
 
 .sidebar-nav > ul > li.active > a i {
@@ -31,7 +40,7 @@ ul li {
 }
 
 .label-themecolor {
-  background: #2e7d21;
+  background: $primary-color;
 }
 
 .sideBar .panel {
@@ -41,7 +50,7 @@ ul li {
 }
 
 .sideBar .panel .panel-heading {
-  background-color: #2e7d21;
+  background-color: $primary-color;
   border-radius: 0;
   padding: 0 15px;
   height: 45px;
