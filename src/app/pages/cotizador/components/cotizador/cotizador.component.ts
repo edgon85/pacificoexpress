@@ -37,8 +37,8 @@ export class CotizadorComponent implements OnInit {
 
   detalleCotizado: boolean = false;
 
-  temperatura: String = '' ;
-  ruta: String = ''
+  temperatura: String = '';
+  ruta: String = '';
   horasDeServicio: number = 0;
   priecio: number = 0;
 
@@ -51,12 +51,12 @@ export class CotizadorComponent implements OnInit {
     this.formularioCotizador();
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
   // Formulario cotiazdor
   formularioCotizador() {
     this.forma = this.bf.group({
-      producto: ['', Validators.required],
+      // producto: ['', Validators.required],
       ruta: ['', Validators.required],
       temperatura: ['', Validators.required],
       medidasFurgon: ['', Validators.required],
@@ -75,7 +75,6 @@ export class CotizadorComponent implements OnInit {
           Validators.maxLength(8),
         ],
       ],
-      
     });
   }
 
@@ -84,7 +83,6 @@ export class CotizadorComponent implements OnInit {
   }
 
   public btnCotizar() {
-
     // si la forma de checkout es valida
     if (this.forma.invalid) {
       return Object.values(this.forma.controls).forEach((control) => {
@@ -97,7 +95,7 @@ export class CotizadorComponent implements OnInit {
         } else {
           control.markAsTouched();
 
-          console.log('llenar campor obligatorios')
+          console.log('llenar campor obligatorios');
           // Swal.fire('Llene campos obligatorios');
         }
       });
@@ -107,146 +105,138 @@ export class CotizadorComponent implements OnInit {
     this.ruta = this.forma.value.ruta;
     this.temperatura = this.forma.value.temperatura;
 
-    if(this.ruta === 'HI-SV' && this.temperatura === '30-0-F'){
+    if (this.ruta === 'HI-SV' && this.temperatura === '30-0-F') {
       this.horasDeServicio = 72;
       this.priecio = 1300;
-    } else if(this.ruta === 'HI-SV' && this.temperatura === '0-MENOS-0'){
+    } else if (this.ruta === 'HI-SV' && this.temperatura === '0-MENOS-0') {
       this.horasDeServicio = 72;
       this.priecio = 1600;
-    }else if(this.ruta === 'HI-HO' && this.temperatura === '30-0-F'){
+    } else if (this.ruta === 'HI-HO' && this.temperatura === '30-0-F') {
       this.horasDeServicio = 96;
       this.priecio = 2100;
-    }else if(this.ruta === 'HI-HO' && this.temperatura === '0-MENOS-0'){
+    } else if (this.ruta === 'HI-HO' && this.temperatura === '0-MENOS-0') {
       this.horasDeServicio = 96;
       this.priecio = 2400;
-    }else if(this.ruta === 'HI-NI' && this.temperatura === '30-0-F'){
+    } else if (this.ruta === 'HI-NI' && this.temperatura === '30-0-F') {
       this.horasDeServicio = 120;
       this.priecio = 2750;
-    }else if(this.ruta === 'HI-NI' && this.temperatura === '0-MENOS-0'){
+    } else if (this.ruta === 'HI-NI' && this.temperatura === '0-MENOS-0') {
       this.horasDeServicio = 120;
       this.priecio = 2400;
-    }else if(this.ruta === 'HI-CR' && this.temperatura === '30-0-F'){
+    } else if (this.ruta === 'HI-CR' && this.temperatura === '30-0-F') {
       this.horasDeServicio = 144;
       this.priecio = 2850;
-    }else if(this.ruta === 'HI-CR' && this.temperatura === '0-MENOS-0'){
+    } else if (this.ruta === 'HI-CR' && this.temperatura === '0-MENOS-0') {
       this.horasDeServicio = 144;
       this.priecio = 3350;
-    }else if(this.ruta === 'HI-PA' && this.temperatura === '30-0-F'){
+    } else if (this.ruta === 'HI-PA' && this.temperatura === '30-0-F') {
       this.horasDeServicio = 168;
       this.priecio = 3800;
-    }else if(this.ruta === 'HI-PA' && this.temperatura === '0-MENOS-0'){
+    } else if (this.ruta === 'HI-PA' && this.temperatura === '0-MENOS-0') {
       this.horasDeServicio = 96;
       this.priecio = 4300;
-    }else if(this.ruta === 'NI-HI' && this.temperatura === '30-0-F'){
+    } else if (this.ruta === 'NI-HI' && this.temperatura === '30-0-F') {
       this.horasDeServicio = 96;
       this.priecio = 2300;
-    }else if(this.ruta === 'NI-HI' && this.temperatura === '0-MENOS-0'){
+    } else if (this.ruta === 'NI-HI' && this.temperatura === '0-MENOS-0') {
       this.horasDeServicio = 96;
       this.priecio = 2650;
-    }else if(this.ruta === 'Guate-Teculutan' && this.temperatura === '30-0-F'){
+    } else if (
+      this.ruta === 'Guate-Teculutan' &&
+      this.temperatura === '30-0-F'
+    ) {
       this.horasDeServicio = 24;
       this.priecio = 500;
-    }else if(this.ruta === 'Guate-Teculutan' && this.temperatura === '0-MENOS-0'){
+    } else if (
+      this.ruta === 'Guate-Teculutan' &&
+      this.temperatura === '0-MENOS-0'
+    ) {
       this.horasDeServicio = 24;
       this.priecio = 650;
-    }else if(this.ruta === 'Guate-Xela' && this.temperatura === '30-0-F'){
+    } else if (this.ruta === 'Guate-Xela' && this.temperatura === '30-0-F') {
       this.horasDeServicio = 24;
       this.priecio = 650;
-    }else if(this.ruta === 'Guate-Xela' && this.temperatura === '0-MENOS-0'){
+    } else if (this.ruta === 'Guate-Xela' && this.temperatura === '0-MENOS-0') {
       this.horasDeServicio = 24;
       this.priecio = 750;
-    }
-    else if(this.ruta === 'GU-SV' && this.temperatura === '30-0-F'){
+    } else if (this.ruta === 'GU-SV' && this.temperatura === '30-0-F') {
       this.horasDeServicio = 48;
       this.priecio = 1000;
-    }else if(this.ruta === 'GU-SV' && this.temperatura === '0-MENOS-0'){
+    } else if (this.ruta === 'GU-SV' && this.temperatura === '0-MENOS-0') {
       this.horasDeServicio = 48;
       this.priecio = 1300;
-    }else if(this.ruta === 'GU-HO' && this.temperatura === '30-0-F'){
+    } else if (this.ruta === 'GU-HO' && this.temperatura === '30-0-F') {
       this.horasDeServicio = 72;
       this.priecio = 1700;
-    }else if(this.ruta === 'GU-HO' && this.temperatura === '0-MENOS-0'){
+    } else if (this.ruta === 'GU-HO' && this.temperatura === '0-MENOS-0') {
       this.horasDeServicio = 72;
       this.priecio = 2000;
-    }
-    else if(this.ruta === 'GU-NI' && this.temperatura === '30-0-F'){
+    } else if (this.ruta === 'GU-NI' && this.temperatura === '30-0-F') {
       this.horasDeServicio = 96;
       this.priecio = 2000;
-    }else if(this.ruta === 'GU-NI' && this.temperatura === '0-MENOS-0'){
+    } else if (this.ruta === 'GU-NI' && this.temperatura === '0-MENOS-0') {
       this.horasDeServicio = 96;
       this.priecio = 2350;
-    }
-    else if(this.ruta === 'GU-CR' && this.temperatura === '30-0-F'){
+    } else if (this.ruta === 'GU-CR' && this.temperatura === '30-0-F') {
       this.horasDeServicio = 120;
       this.priecio = 2500;
-    }else if(this.ruta === 'GU-CR' && this.temperatura === '0-MENOS-0'){
+    } else if (this.ruta === 'GU-CR' && this.temperatura === '0-MENOS-0') {
       this.horasDeServicio = 120;
       this.priecio = 2900;
-    }
-    else if(this.ruta === 'GU-PA' && this.temperatura === '30-0-F'){
+    } else if (this.ruta === 'GU-PA' && this.temperatura === '30-0-F') {
       this.horasDeServicio = 144;
       this.priecio = 3500;
-    }else if(this.ruta === 'GU-PA' && this.temperatura === '0-MENOS-0'){
+    } else if (this.ruta === 'GU-PA' && this.temperatura === '0-MENOS-0') {
       this.horasDeServicio = 144;
       this.priecio = 4000;
-    }
-    else if(this.ruta === 'CR-BE' && this.temperatura === '30-0-F'){
+    } else if (this.ruta === 'CR-BE' && this.temperatura === '30-0-F') {
       this.horasDeServicio = 120;
       this.priecio = 3200;
-    }else if(this.ruta === 'CR-BE' && this.temperatura === '0-MENOS-0'){
+    } else if (this.ruta === 'CR-BE' && this.temperatura === '0-MENOS-0') {
       this.horasDeServicio = 120;
       this.priecio = 3800;
-    }
-    else if(this.ruta === 'CR-HI' && this.temperatura === '30-0-F'){
+    } else if (this.ruta === 'CR-HI' && this.temperatura === '30-0-F') {
       this.horasDeServicio = 144;
       this.priecio = 3000;
-    }else if(this.ruta === 'CR-HI' && this.temperatura === '0-MENOS-0'){
+    } else if (this.ruta === 'CR-HI' && this.temperatura === '0-MENOS-0') {
       this.horasDeServicio = 144;
       this.priecio = 3300;
-    }
-    else if(this.ruta === 'CR-GU' && this.temperatura === '30-0-F'){
+    } else if (this.ruta === 'CR-GU' && this.temperatura === '30-0-F') {
       this.horasDeServicio = 120;
       this.priecio = 2500;
-    }else if(this.ruta === 'CR-GU' && this.temperatura === '0-MENOS-0'){
+    } else if (this.ruta === 'CR-GU' && this.temperatura === '0-MENOS-0') {
       this.horasDeServicio = 120;
       this.priecio = 2800;
-    }
-    else if(this.ruta === 'CR-SV' && this.temperatura === '30-0-F'){
+    } else if (this.ruta === 'CR-SV' && this.temperatura === '30-0-F') {
       this.horasDeServicio = 96;
       this.priecio = 2000;
-    }else if(this.ruta === 'CR-SV' && this.temperatura === '0-MENOS-0'){
+    } else if (this.ruta === 'CR-SV' && this.temperatura === '0-MENOS-0') {
       this.horasDeServicio = 96;
       this.priecio = 2200;
-    }
-    else if(this.ruta === 'CR-HO' && this.temperatura === '30-0-F'){
+    } else if (this.ruta === 'CR-HO' && this.temperatura === '30-0-F') {
       this.horasDeServicio = 72;
       this.priecio = 1800;
-    }else if(this.ruta === 'CR-HO' && this.temperatura === '0-MENOS-0'){
+    } else if (this.ruta === 'CR-HO' && this.temperatura === '0-MENOS-0') {
       this.horasDeServicio = 72;
       this.priecio = 2200;
-    }
-    else if(this.ruta === 'CR-NI' && this.temperatura === '30-0-F'){
+    } else if (this.ruta === 'CR-NI' && this.temperatura === '30-0-F') {
       this.horasDeServicio = 48;
       this.priecio = 1400;
-    }else if(this.ruta === 'CR-NI' && this.temperatura === '0-MENOS-0'){
+    } else if (this.ruta === 'CR-NI' && this.temperatura === '0-MENOS-0') {
       this.horasDeServicio = 48;
       this.priecio = 1700;
     }
-    
-
-
 
     this.detalleCotizado = true;
   }
 
-
-  nuevaCotizacion(){
+  nuevaCotizacion() {
     this.detalleCotizado = false;
 
     this.forma.reset({
       producto: '',
       ruta: '',
-      temperatura :'',
+      temperatura: '',
       medidas: '',
       nombre: '',
       empresa: '',

@@ -7,20 +7,20 @@
         <div class="content">
             <div class="form">
                 <form [formGroup]="forma">
-                    <div class="input-field">
+                    <!-- <div class="input-field">
                         <label>Tipo de producto</label>
                         <div class="content-input">
                             <input formControlName="producto" type="text" placeholder="producto" class="input" />
                             <small *ngIf="validarCampo('producto')" class="text-danger">* Este campo es
                                 requerido</small>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="input-field">
                         <label>Ruta</label>
                         <div class="content-input">
-                            <div class="custom-select">
-                                <select formControlName="ruta" name="">
+                            <div class="custom-selector">
+                                <select class="selector" formControlName="ruta" name="">
                                     <option value="" disabled selected hidden>Seleccione una opción</option>
                                     <option *ngFor="let ruta of rutas" [value]="ruta.id">
                                         {{ ruta.name }}
@@ -34,9 +34,9 @@
                         <label>Temperatura</label>
 
                         <div class="content-input">
-                            <div class="custom-select">
-                                <select formControlName="temperatura">
-                                    <option class="select-option" value="" disabled selected hidden>Seleccione una
+                            <div class="custom-selector">
+                                <select class="selector" formControlName="temperatura">
+                                    <option class="" value="" disabled selected hidden>Seleccione una
                                         opción</option>
                                     <option *ngFor="let temperatura of temperaturas" [value]="temperatura.id">
                                         {{ temperatura.name }}
@@ -63,8 +63,7 @@
                     <div class="input-field">
                         <label for="">Medidas de furgon</label>
                         <div class="content-input">
-                            <div class="inline">
-
+                            <div class="inlines">
                                 <div>
                                     <input formControlName="medidasFurgon" type="radio" name="medidasFurgon"
                                         id="medidadsFurgon1" value="option1" />

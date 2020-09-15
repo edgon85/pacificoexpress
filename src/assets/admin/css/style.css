@@ -3701,7 +3701,7 @@ This is for the checkbox radio button and switch
 ******************/
 /* Radio Buttons
    ========================================================================== */
-[type="radio"]:not(:checked),
+/* [type="radio"]:not(:checked),
 [type="radio"]:checked {
   position: absolute;
   left: -9999px;
@@ -3720,7 +3720,7 @@ This is for the checkbox radio button and switch
   -webkit-transition: 0.28s ease;
   -o-transition: 0.28s ease;
   transition: 0.28s ease;
-  /* webkit (konqueror) browsers */
+  / * webkit (konqueror) browsers * /
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -3742,7 +3742,7 @@ This is for the checkbox radio button and switch
   transition: 0.28s ease;
 }
 
-/* Unchecked styles */
+/ * Unchecked styles * /
 [type="radio"]:not(:checked) + label:before,
 [type="radio"]:not(:checked) + label:after,
 [type="radio"]:checked + label:before,
@@ -3764,7 +3764,7 @@ This is for the checkbox radio button and switch
   transform: scale(0);
 }
 
-/* Checked styles */
+/ * Checked styles * /
 [type="radio"]:checked + label:before {
   border: 2px solid transparent;
   -webkit-animation: ripple 0.2s linear forwards;
@@ -3789,14 +3789,14 @@ This is for the checkbox radio button and switch
   transform: scale(1.02);
 }
 
-/* Radio With gap */
+/ * Radio With gap * /
 [type="radio"].with-gap:checked + label:after {
   -webkit-transform: scale(0.5);
   -ms-transform: scale(0.5);
   transform: scale(0.5);
 }
 
-/* Focused styles */
+/ * Focused styles * /
 [type="radio"].tabbed:focus + label:before {
   -webkit-box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
@@ -3804,7 +3804,7 @@ This is for the checkbox radio button and switch
   animation: ripple 0.2s linear forwards;
 }
 
-/* Disabled Radio With gap */
+/ * Disabled Radio With gap * /
 [type="radio"].with-gap:disabled:checked + label:before {
   border: 2px solid rgba(0, 0, 0, 0.26);
   -webkit-animation: ripple 0.2s linear forwards;
@@ -3816,7 +3816,7 @@ This is for the checkbox radio button and switch
   background-color: rgba(0, 0, 0, 0.26);
 }
 
-/* Disabled style */
+/ * Disabled style * /
 [type="radio"]:disabled:not(:checked) + label:before,
 [type="radio"]:disabled:checked + label:before {
   background-color: transparent;
@@ -3837,7 +3837,7 @@ This is for the checkbox radio button and switch
   background-color: rgba(0, 0, 0, 0.26);
   border-color: #bdbdbd;
 }
-
+ */
 /* Checkboxes
    ========================================================================== */
 /* CUSTOM CSS CHECKBOXES */
@@ -4514,7 +4514,7 @@ pre {
   border: 2px solid #ffffff;
   background-color: #ffffff;
 }
-
+/* 
 [type="radio"]:not(:checked) + label {
   padding-left: 26px;
   height: 25px;
@@ -4947,7 +4947,7 @@ pre {
   border: 2px solid #ffffff;
   -webkit-animation: ripple 0.2s linear forwards;
   animation: ripple 0.2s linear forwards;
-}
+} */
 
 .switch label {
   font-weight: normal;
@@ -7370,8 +7370,8 @@ File: scss
   border-color: #ef5350;
 }
 
-.input-group-addon [type="radio"]:not(:checked),
-.input-group-addon [type="radio"]:checked,
+/* .input-group-addon [type="radio"]:not(:checked), */
+/* .input-group-addon [type="radio"]:checked, */
 .input-group-addon [type="checkbox"]:not(:checked),
 .input-group-addon [type="checkbox"]:checked {
   position: initial;
