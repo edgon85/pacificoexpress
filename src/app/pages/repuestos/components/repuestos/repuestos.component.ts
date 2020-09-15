@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SidebarService } from 'src/app/services/sidebar.service';
 
 @Component({
   selector: 'app-repuestos',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RepuestosComponent implements OnInit {
 
-  constructor() { }
+  constructor(public sidebarService: SidebarService) { }
 
   ngOnInit(): void {
+  }
+
+
+  repuestoSubcategoria(repuestoId: string){
+    console.log(repuestoId);
   }
 
 }

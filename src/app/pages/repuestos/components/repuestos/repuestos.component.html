@@ -1,11 +1,18 @@
 <div class="myContainer">
     <div class="repuestos">
         <div class="sidebar">
-            <app-sidebar></app-sidebar>
+            <p>Repuestos</p>
         </div>
 
         <div class="content">
-
+            <div class="grid-repuestos">
+                <div class="card pointer" *ngFor="let menu of sidebarService.menuCategorias" (click)="repuestoSubcategoria(menu.id)">
+                    <img [src]="menu.icono" class="card-img-top" alt="..." />
+                    <div class="card-body">
+                        <h5 class="card-title">{{ menu.titulo }}</h5>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

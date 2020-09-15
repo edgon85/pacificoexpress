@@ -6,27 +6,49 @@
 
 .repuestos {
   display: grid;
-  grid-template-columns: 20em 1fr;
+  grid-template-columns: 10em 1fr;
   grid-template-rows: 1 auto;
   grid-template-areas: "sidebar content";
 
   .sidebar {
     grid-area: sidebar;
 
+    //height: 200px;
     // border: 1px solid red;
-    padding-top: 1em;
+    padding: 0.5em;
+
+    p {
+      padding: 0.5em;
+      background: $primary-color;
+      color: $color-white;
+      text-align: center;
+      border-radius: 5px;
+      font-family: $font-primary;
+    }
   }
 
   .content {
     grid-area: content;
 
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    grid-template-areas: "section_1 section_2";
+
 
     // border: 1px solid green;
     // text-align: center;
     padding: 0.5em;
+
+    .grid-repuestos {
+      display: grid;
+      gap: 15px;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+      // border: 1px solid  hotpink;
+
+      @media screen and (max-width: 770px) {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      }
+      @media screen and (max-width: 500px) {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      }
+    }
   }
 }
