@@ -1,3 +1,5 @@
+<app-header></app-header>
+
 <div class="myContainer">
     <div class="repuestos">
         <div class="sidebar">
@@ -6,12 +8,15 @@
 
         <div class="content">
             <div class="grid-repuestos">
-                <div class="card pointer" *ngFor="let menu of sidebarService.menuCategorias" (click)="repuestoSubcategoria(menu.id)">
-                    <img [src]="menu.icono" class="card-img-top" alt="..." />
+                <ng-container *ngIf="(repuestos$ | async) as productos">
+
+                
+                <div class="card pointer" *ngFor="let menu of productos" (click)="repuestoSubcategoria(menu.id)">
+                    <img [src]="menu.imagen" class="card-img-top" alt="..." />
                     <div class="card-body">
-                        <h5 class="card-title">{{ menu.titulo }}</h5>
+                        <h5 class="card-title">{{ menu.categoria }}</h5>
                     </div>
-                </div>
+                </div></ng-container>
             </div>
         </div>
     </div>
