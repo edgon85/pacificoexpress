@@ -1,19 +1,72 @@
 <section class="header-product">
-    <h2>{{ param1 }}</h2>
+    <h2>{{ param }}</h2>
 </section>
 
 <section class="container">
     <div class="content">
         <div class="grid-items">
             <!-- <ng-container *ngFor="let items of sidebarService.menuCategorias"> -->
-                <div class="card">
+                <ng-container *ngIf="(repuesto$ | async) as repuestos">
+                <div class="card pointer" *ngFor="let repuesto of repuestos" (click)="dataRepuesto(repuesto)">
                     <img src="assets/images/repuestos/repuesto-1.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <!-- <p class="card-text">Some quick example text.</p> -->
+                        <h5 class="card-title">{{ repuesto.nombre }}</h5>
                     </div>
                 </div>
-            <!-- </ng-container> -->
+            </ng-container>
         </div>
     </div>
 </section>
+
+
+<div class="fondo-modal oculto" [class.oculto]="ocultarModal">
+  <div class="modal fade bs-example-modal-lg show" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" style="display: block;">
+  <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h4 class="modal-title" id="myLargeModalLabel">Detalle de repuesto</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true" (click)="rerrarModal()">×</button>
+          </div>
+          <div class="modal-body">
+              <h4>Overflowing text to show scroll behavior</h4>
+              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+              <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-danger waves-effect text-left" data-dismiss="modal" (click)="rerrarModal()">Cerrar</button>
+          </div>
+      </div>
+      <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+</div>
+
+
+<!-- ======================================================== -->
+<!-- PORDUCT QUICK VIEW MODAL -->
+<!-- ======================================================== - ->
+<div class="modal fade quick-view mt-5" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content" *ngIf="prodSelec">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <div class="media flex-wrap">
+                    <div class="media-left px-0">
+                        <img class="media-object" src="" alt="">
+                    </div>
+                    <div class="media-body">
+                        <h2>titulo</h2>
+                        <h3>$149</h3>
+                        <p>descripcion</p>
+                        <div class="btn-area">
+                            <button (click)="verCategoria()" class="btn btn-primary btn-block">Ver <i
+                                    class="fa fa-angle-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ======================================================== -->

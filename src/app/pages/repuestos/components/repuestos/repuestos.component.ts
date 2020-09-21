@@ -23,13 +23,13 @@ export class RepuestosComponent implements OnInit {
   getAllRepuestos(){
     // this.products$ = _cartService.cart$;
     this.repuestos$ = this.productoService.getAllRepuestos();
-    console.log(this.repuestos$)
+    // console.log(this.repuestos$)
   }
 
 
   repuestoSubcategoria(repuestoId: string){
     this.router.navigateByUrl(`repuestos/${repuestoId}`);
-    console.log(repuestoId);
+    // console.log(repuestoId);
   }
 
 }

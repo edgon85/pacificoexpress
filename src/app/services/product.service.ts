@@ -28,8 +28,8 @@ export class ProductService {
 
     const data = this.http.get(url)
     .pipe(
-     // map(data => Object.keys(data).map(k => data[k])),
-     pluck('productos')
+     pluck('productos'),
+     map(data => Object.keys(data).map(k => data[k])),
     );
 
     return data;

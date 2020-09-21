@@ -9,8 +9,6 @@
         <div class="content">
             <div class="grid-repuestos">
                 <ng-container *ngIf="(repuestos$ | async) as productos">
-
-                
                 <div class="card pointer" *ngFor="let menu of productos" (click)="repuestoSubcategoria(menu.id)">
                     <img [src]="menu.imagen" class="card-img-top" alt="..." />
                     <div class="card-body">
