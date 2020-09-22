@@ -29,9 +29,6 @@
 
   .content {
     grid-area: content;
-
-
-
     // border: 1px solid green;
     // text-align: center;
     padding: 0.5em;
@@ -42,6 +39,9 @@
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 
       // border: 1px solid  hotpink;
+      .card-title{
+        text-transform: uppercase;
+      }
 
       @media screen and (max-width: 770px) {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

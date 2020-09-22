@@ -13,9 +13,10 @@ declare var $: any;
 export class RepuestosDetailComponent implements OnInit {
   repuesto$: Observable<any[]>;
   param: string;
+  headerTitle: string = '';
 
   // ======= modal ========= \\
-  prodSelec: any;
+  prodSelect: any;
   public ocultarModal: boolean = true;
 
   constructor(
@@ -24,6 +25,7 @@ export class RepuestosDetailComponent implements OnInit {
   ) {
     this.route.params.subscribe((param) => {
       this.param = param['id'];
+      this.headerTitle = this.param.split('-').join(' ');
     });
   }
 
@@ -38,8 +40,7 @@ export class RepuestosDetailComponent implements OnInit {
   }
 
   dataRepuesto(repuesto: any) {
-    console.log(repuesto);
-    this.prodSelec = repuesto;
+    this.prodSelect = repuesto;
     this.ocultarModal = false;
   }
 
