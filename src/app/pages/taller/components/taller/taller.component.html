@@ -1,1 +1,97 @@
 <app-header></app-header>
+
+<section class="header-taller">
+  <div class="myContainer">
+    <h2>Que hacemos</h2>
+    <p>
+      Ofrecemos servicio completo de reparación y mantenimiento de automóviles.
+    </p>
+    <div class="title-separator"></div>
+  </div>
+</section>
+
+<section class="myContainer service-block">
+  <div class="service first-service">
+    <div class="caption">
+      <div class="vert-wrap">
+        <div class="vert">
+          <h3>Mantenimiento<br />Preventivo</h3>
+          <div class="text">
+            La mejor forma de minimizar las averías es realizar un mantenimiento
+            de rutina.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="service">
+    <div class="imagen">
+      <img src="assets/images/taller/service-1-bg.jpg" alt="" />
+    </div>
+  </div>
+  <div class="service">
+    <div class="caption">
+      <div class="vert-wrap">
+        <div class="vert">
+          <h3>Reparaciones más<br />comunes.</h3>
+          <div class="text">
+            Tenemos más de 30 reparaciones comunes de automóviles
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="service">
+    <div class="imagen">
+      <img src="assets/images/taller/service-2-bg.jpg" alt="" />
+    </div>
+  </div>
+  <div class="service">
+    <div class="caption">
+      <div class="vert-wrap">
+        <div class="vert">
+          <h3>Reparación y servicio<br />de frenos</h3>
+          <div class="text">
+            El mantenimiento de los frenos es importante para ayudar a
+            garantizar su seguridad y la de sus productos.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="service">
+    <div class="imagen">
+      <img src="assets/images/taller/service-3-bg.jpg" alt="" />
+    </div>
+  </div>
+</section>
+
+<section class="header-taller">
+  <div class="myContainer">
+    <h2>Nuestros planes de precios</h2>
+    <p>Paquetes de servicio de automóviles a precio fijo</p>
+    <div class="title-separator"></div>
+  </div>
+</section>
+
+<section class="prices">
+  <div class="myContainer">
+    <div class="content">
+      <div class="grid-items">
+        <ng-container *ngIf="servicios$ | async as servicios">
+          <div class="card" *ngFor="let servicio of servicios">
+            <div class="card-content">
+              <div class="title">{{ servicio.nombre | uppercase}}</div>
+              <div class="price">Q{{ servicio.precio | number : '1.2-2' }}</div>
+              <img [src]="servicio.imagen" alt="" />
+              <div class="description">{{ servicio.detalle }}</div>
+              <button class="btn">Más información</button>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>

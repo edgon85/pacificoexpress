@@ -1,0 +1,147 @@
+@import "../../../.././../assets/variables.scss";
+
+.header-taller {
+  padding: 5em 0;
+
+  //   justify-content: center;
+  //   align-items: center;
+
+  .myContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h2 {
+      font-weight: 600;
+      color: #3a3a3a;
+      font-size: 44px;
+      font-family: $font-primary;
+      //   text-align: center;
+      //   letter-spacing: 3px;
+      //   text-transform: uppercase;
+    }
+
+    p {
+      font-size: 1em;
+      //   text-align: center;
+      line-height: 26px;
+    }
+
+    .title-separator {
+      width: 46px;
+      height: 3px;
+      background-color: #ffc513;
+    }
+  }
+}
+
+.service-block {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+
+  .service {
+    .caption {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      h3 {
+        font-size: 27px;
+        line-height: 33px;
+        // font-family: 'Poppins',sans-serif;
+        font-weight: 600;
+        text-transform: inherit;
+        margin-bottom: 4px;
+      }
+      .text {
+        padding: 0 1em;
+      }
+    }
+
+    .imagen {
+      img {
+        width: 100%;
+        vertical-align: top;
+      }
+    }
+  }
+
+  .first-service {
+    background-color: #ffc515;
+    color: #292929;
+  }
+
+  div:nth-of-type(3) {
+    background-color: #f3f3f3;
+    color: #292929;
+  }
+  div:nth-of-type(5) {
+    background-color: #2b2b2b;
+    h3 {
+      color: #ffc515;
+    }
+    .text {
+      color: #fff;
+    }
+  }
+}
+
+.prices {
+  .content {
+    padding: 2em 0;
+    .grid-items {
+      display: grid;
+      gap: 1em;
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+
+      .card {
+        padding: 0.5em 0.2em;
+        .card-content {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+
+          .title {
+            font-size: 22px;
+            line-height: 29px;
+            font-weight: 600;
+            color: #3a3a3a;
+            transition: all 0.3s ease 0s;
+            padding: 0 25px;
+          }
+
+          .price {
+            font-size: 44px;
+            font-weight: 600;
+            transition: all 0.3s ease 0s;
+            // margin-top: 19px;
+          }
+
+          .description {
+            color: #3a3a3a;
+            transition: all 0.3s ease 0s;
+            margin-top: 12px;
+            padding-left: 25px;
+            padding-right: 25px;
+            font-size: 16px;
+            line-height: 25px;
+          }
+
+          img {
+            width: 100%;
+          }
+
+          .btn {
+            margin-top: 0.8em;
+          }
+        }
+      }
+    }
+  }
+}

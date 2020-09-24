@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { TallerService } from '../../../../services/taller.service';
 
 @Component({
   selector: 'app-taller',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TallerComponent implements OnInit {
 
-  constructor() { }
+  servicios$: Observable<any[]>;
+
+  constructor(private tallerService: TallerService) { }
 
   ngOnInit(): void {
+    this.obtenerServiciosDeTaller();
+  }
+
+  obtenerServiciosDeTaller(){
+    this.servicios$ = this.tallerService.getAllRepuestos();
   }
 
 }
