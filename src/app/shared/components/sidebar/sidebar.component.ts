@@ -16,7 +16,7 @@ export class SidebarComponent implements OnInit {
   urlPath = '';
 
   constructor(public sidebarService: SidebarService, public route: Router) {
-    this.route.events
+   /*  this.route.events
       .pipe(
         filter((evento) => evento instanceof ActivationEnd),
         filter((evento: ActivationEnd) => evento.snapshot.firstChild === null),
@@ -25,7 +25,7 @@ export class SidebarComponent implements OnInit {
       .subscribe((resp) => {
         this.urlPath = resp.path;
         console.log(this.urlPath);
-      });
+      }); */
   }
 
   ngOnInit(): void {
