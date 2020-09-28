@@ -6,6 +6,7 @@ import { BannerComponent } from './components/banner/banner.component';
 import { RouterModule } from '@angular/router';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NoImagePipe } from '../pipes/no-image.pipe';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { NoImagePipe } from '../pipes/no-image.pipe';
     FooterComponent,
     BannerComponent,
     SidebarComponent,
-    NoImagePipe
+    NoImagePipe,
+    LoadingComponent
   ],
   imports: [RouterModule, CommonModule],
   exports: [
@@ -21,7 +23,8 @@ import { NoImagePipe } from '../pipes/no-image.pipe';
     FooterComponent,
     BannerComponent,
     SidebarComponent,
-    NoImagePipe
+    NoImagePipe,
+    LoadingComponent
   ],
 })
 export class SharedModule {}

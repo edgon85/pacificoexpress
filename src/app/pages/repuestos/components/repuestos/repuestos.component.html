@@ -8,13 +8,15 @@
 
         <div class="content">
             <div class="grid-repuestos">
-                <ng-container *ngIf="(repuestos$ | async) as productos">
-                <div class="card pointer" *ngFor="let menu of productos" (click)="repuestoSubcategoria(menu.id)">
-                    <img [src]="menu.imagen" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">{{ menu.categoria }}</h5>
+                <ng-container *ngIf="repuestos$ | async as productos">
+                    <div class="card pointer" *ngFor="let menu of productos" (click)="repuestoSubcategoria(menu.id)">
+                        <img [src]="menu.imagen" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">{{ menu.categoria }}</h5>
+                            <button class="card__btn">Ver más<span>&rarr;</span></button>
+                        </div>
                     </div>
-                </div></ng-container>
+                </ng-container>
             </div>
         </div>
     </div>

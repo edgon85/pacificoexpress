@@ -135,6 +135,7 @@
       height: 100%;
       width: 100%;
       position: relative;
+      text-decoration: none !important;
       &::after {
         content: "";
         display: block;

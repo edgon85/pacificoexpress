@@ -13,7 +13,7 @@
     align-items: center;
     h2 {
       font-weight: 600;
-      color: #3a3a3a;
+      color: $primary-color;
       font-size: 44px;
       font-family: $font-primary;
       //   text-align: center;
@@ -30,7 +30,7 @@
     .title-separator {
       width: 46px;
       height: 3px;
-      background-color: #ffc513;
+      background-color: #efe300;
     }
   }
 }
@@ -71,7 +71,8 @@
   }
 
   .first-service {
-    background-color: #ffc515;
+    // background-color: #ffc515;
+    background-color: #efe300;
     color: #292929;
   }
 
@@ -80,9 +81,10 @@
     color: #292929;
   }
   div:nth-of-type(5) {
-    background-color: #2b2b2b;
+    background-color: $primary-color;
     h3 {
-      color: #ffc515;
+      // color: #ffc515;
+      color: #efe300;
     }
     .text {
       color: #fff;
