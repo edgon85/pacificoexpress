@@ -5,6 +5,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { RouterModule } from '@angular/router';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { NoImagePipe } from '../pipes/no-image.pipe';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     FooterComponent,
     BannerComponent,
     SidebarComponent,
+    NoImagePipe
   ],
   imports: [RouterModule, CommonModule],
   exports: [
@@ -19,6 +21,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     FooterComponent,
     BannerComponent,
     SidebarComponent,
+    NoImagePipe
   ],
 })
 export class SharedModule {}

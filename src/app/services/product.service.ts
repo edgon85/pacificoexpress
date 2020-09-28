@@ -35,4 +35,16 @@ export class ProductService {
     return data;
   }
 
+
+  public getVehiculos(category: string) {
+    const url = this.urlProduct + `/vehiculos.json?orderBy="category"&equalTo="${category}"`;
+
+    const data = this.http.get(url)
+    .pipe(
+     map(data => Object.keys(data).map(k => data[k])),
+    );
+
+    return data;
+  }
+
 }

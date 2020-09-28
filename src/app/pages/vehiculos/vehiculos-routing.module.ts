@@ -20,6 +20,7 @@ const routes: Routes = [
       { path: 'furgones-refrigerados', component: VehiculosLayoutComponent },
       { path: 'montacargas', component: VehiculosLayoutComponent },
       { path: 'retroexcabadoras', component: VehiculosLayoutComponent },
+      { path: '', redirectTo: '/vehiculos/cabezales', pathMatch: 'full' },
     ],
   },
 ];
