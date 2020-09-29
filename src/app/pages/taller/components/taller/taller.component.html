@@ -74,7 +74,7 @@
   </div>
 </section>
 
-<section class="prices">
+<!-- <section class="prices">
   <div class="myContainer">
     <div class="content">
       <div class="grid-items">
@@ -89,6 +89,55 @@
             </div>
           </div>
         </ng-container>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<section class="precios myContainer">
+  <div class="table-01-wrapper">
+    <table class="table-01">
+      <thead>
+        <tr>
+          <th>Servicio</th>
+          <th>Tiempo aproximado</th>
+          <th>Costo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngIf="servicios$ | async as servicios">
+          <tr *ngFor="let servicio of servicios">
+            <td>{{ servicio.nombre }}</td>
+            <td>1 Hora</td>
+            <td>Q{{ servicio.precio | number: "1.2-2" }}</td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="schedule">
+  <div class="block position-relative overflow-hidden">
+    <div
+      class="section__text-background text-color02 text-center text-background__center">
+      Programar
+    </div>
+    <div class="text-center">
+      <h2 class="h-lg">
+        Programe <span class="color">su cita</span> hoy
+      </h2>
+      <p class="info">
+        Especialistas en servicio de reparación y mantenimiento automotriz
+      </p>
+      <h2 class="h-phone">1-800-123-4567</h2>
+      <div class="btn-inline">
+        <a
+          class="btn btn-border btn-invert btn-wide"
+          href="#"
+          data-toggle="modal"
+          data-target="#appointmentForm">
+          <span>Appointment</span></a>
       </div>
     </div>
   </div>
