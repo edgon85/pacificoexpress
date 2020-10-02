@@ -1,5 +1,88 @@
 <app-header></app-header>
-<section class="transportes">
+<section class="transportes myContainer">
+  <div class="transportes_header">
+    <h3>Servicio de transporte</h3>
+    <!-- <p>Somos una empresa guatemalteca especializada en transporte refrigerado a nivel centroamericano</p> -->
+    <div class="title-separator"></div>
+  </div>
 
+  <div class="transportes__body-sections">
+    <div class="section-image">
+      <img src="assets/images/transporte/transporte-1.jpg" alt="" />
+    </div>
+    <div class="section-buttons">
+      <div class="buttons">
+        <button #eyelash1 (click)="selectEyelash1()" class="btn-transports">
+          Servicio
+        </button>
+        <button #eyelash2 (click)="selectEyelash2()" class="btn-transports">
+          Puntualidad
+        </button>
+        <button #eyelash3 (click)="selectEyelash3()" class="btn-transports">
+          Refrigerado
+        </button>
+        <button #eyelash4 (click)="selectEyelash4()" class="btn-transports">
+          Monitoreo
+        </button>
+      </div>
+      <div class="buttons-content">
+        <div *ngIf="btn_1" class="btn_1">
+          <h4>Nuestro servicio de transporte</h4>
+          <p>
+            Somos una empresa guatemalteca especializada en transporte
+            refrigerado a nivel centroamericano cumpliendo con la normativa
+            vigente, con monitoreo mediante dispositivo GPS provisto en todas
+            las unidades y apoyándonos con plataformas y aplicaciones para el
+            seguimiento respectivo.
+          </p>
+          <p>
+            El servicio de transporte con Pacifico Express se caracteriza por la
+            adaptabilidad constante a los requerimientos y al apoyo mutuo que
+            genera sinergia en cada entrega.
+          </p>
+        </div>
+        <div *ngIf="btn_2" class="btn_1">
+          <h4>Siempre puntuales</h4>
+          <p>
+            Nuestro propósito es servir con calidad, agilizando la movilización
+            de productos a los distintos países de Centroamérica.
+          </p>
+          <p>
+            20 años de experiencia acreditan que somos profesionales tratando
+            con cargas refrigeradas y secas.
+          </p>
+        </div>
+        <div *ngIf="btn_3" class="btn_1">
+          <h4>Unidades de enfriamiento</h4>
+          <p>
+            Cada unidad de enfriamiento se encuentra en óptimas condiciones, el
+            mantenimiento a cada equipo es constante.
+          </p>
+          <p>
+            Contamos con el equipo técnico propio disponible las 24 horas para
+            atender cualquier eventualidad
+          </p>
+          <button class="btn">Cotizar</button>
+        </div>
+
+        <div *ngIf="btn_4" class="btn_1">
+          <h4>Monitorea tu carga</h4>
+          <p>
+            Cada unidad está provista de GPS para ser monitoreada durante el
+            transito del viaje.
+          </p>
+          <p>
+            Nuestros altos estándares de compromiso y responsabilidad acreditan
+            que su mercadería estará en constante verificación de temperatura,
+          </p>
+          <p>
+            Contamos con furgones de 53 y 48 pies, con 3 ejes, en óptimas
+            condiciones, limpios y libres de malos olores.
+          </p>
+          <button class="btn">Monitorear</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 <app-footer></app-footer>

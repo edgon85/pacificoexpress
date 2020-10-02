@@ -1,3 +1,94 @@
-.transportes{
-    min-height: 80vh;
+@import "../../../../../assets/variables.scss";
+
+.transportes {
+  min-height: 80vh;
+
+  padding: 2em 0;
+
+  .transportes_header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h3 {
+      font-weight: 600;
+      color: #1c2240;
+      font-size: 44px;
+      font-family: "bebas_kai", Arial, sans-serif;
+    }
+    p {
+      font-size: 1em;
+      line-height: 26px;
+    }
+
+    .title-separator {
+      width: 46px;
+      height: 3px;
+      background-color: #efe300;
+    }
+  }
+
+  .transportes__body-sections {
+    margin-top: 2em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "image_section button_section";
+    gap: 1em;
+
+    .section-image {
+      grid-area: image_section;
+      width: 100%;
+      img {
+        width: 100%;
+        vertical-align: top;
+      }
+    }
+
+    .section-buttons {
+      grid-area: button_section;
+
+      .buttons {
+        border-bottom: 1px solid #ddd;
+
+        .btn-transports {
+          width: 8em;
+          padding: 10px 15px;
+          margin: 0 2px 0 0;
+          font-size: 1em;
+          color: #5d6b82;
+          border: transparent;
+          background: transparent;
+
+          &:hover {
+            background: #efe300;
+            color: $primary-color;
+          }
+        }
+      }
+
+      .buttons-content{
+          .btn_1{
+              padding: 1em;
+
+              h4{
+                color: #3c4a62;
+                margin: 0 0 15px;
+                font-weight: 700;
+                line-height: 1.4em;
+                text-transform: uppercase;
+              }
+
+              .btn{
+                  margin-top: 2em;
+              }
+          }
+      }
+    }
+  }
+}
+
+.selected{
+    background: #efe300 !important;
+    color: $primary-color !important;
 }
