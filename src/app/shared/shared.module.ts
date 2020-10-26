@@ -7,6 +7,9 @@ import { RouterModule } from '@angular/router';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NoImagePipe } from '../pipes/no-image.pipe';
 import { LoadingComponent } from './components/loading/loading.component';
+import { CotizadorVehiculosComponent } from './components/cotizador-vehiculos/cotizador-vehiculos.component';
+import { CotizadorTallerComponent } from './components/cotizador-taller/cotizador-taller.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,16 +18,20 @@ import { LoadingComponent } from './components/loading/loading.component';
     BannerComponent,
     SidebarComponent,
     NoImagePipe,
-    LoadingComponent
+    LoadingComponent,
+    CotizadorVehiculosComponent,
+    CotizadorTallerComponent,
   ],
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, FormsModule, ReactiveFormsModule],
   exports: [
     HeaderComponent,
     FooterComponent,
     BannerComponent,
     SidebarComponent,
     NoImagePipe,
-    LoadingComponent
+    LoadingComponent,
+    CotizadorVehiculosComponent,
+    CotizadorTallerComponent,
   ],
 })
 export class SharedModule {}

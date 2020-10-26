@@ -1,0 +1,142 @@
+<div class="vehiculos">
+    <div class="form" *ngIf="formCotizado">
+        <form [formGroup]="forma">
+            <!-- <div class="input-field">
+            <label>Tipo de producto</label>
+            <div class="content-input">
+                <input formControlName="producto" type="text" placeholder="producto" class="input" />
+                <small *ngIf="validarCampo('producto')" class="text-danger">* Este campo es
+                    requerido</small>
+            </div>
+        </div> -->
+
+            <div class="input-field">
+                <label>Ruta</label>
+                <div class="content-input">
+                    <div class="custom-selector">
+                        <select class="selector" formControlName="ruta" name="">
+                            <option value="" disabled selected hidden>Seleccione una opción</option>
+                            <option *ngFor="let ruta of rutas" [value]="ruta.id">
+                                {{ ruta.name }}
+                            </option>
+                        </select>
+                    </div>
+                    <small *ngIf="validarCampo('ruta')" class="text-danger">* Este campo es requerido</small>
+                </div>
+            </div>
+            <div class="input-field">
+                <label>Temperatura</label>
+
+                <div class="content-input">
+                    <div class="custom-selector">
+                        <select class="selector" formControlName="temperatura">
+                            <option class="" value="" disabled selected hidden>Seleccione una
+                                opción</option>
+                            <option *ngFor="let temperatura of temperaturas" [value]="temperatura.id">
+                                {{ temperatura.name }}
+                            </option>
+                        </select>
+                    </div>
+                    <small *ngIf="validarCampo('temperatura')" class="text-danger">* Este campo es
+                        requerido</small>
+                </div>
+            </div>
+            <!-- <div class="input-field">
+            <label>Horas de servicio</label>
+            <div class="custom-select">
+                <select name="" id="">
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                    <option value="">4</option>
+                    <option value="">5</option>
+                </select>
+            </div>
+        </div> -->
+
+            <div class="input-field">
+                <label for="">Medidas de furgon</label>
+                <div class="content-input">
+                    <div class="inlines">
+                        <div>
+                            <input formControlName="medidasFurgon" type="radio" name="medidasFurgon"
+                                id="medidadsFurgon1" value="option1" />
+                            <label for="medidadsFurgon1">48 pies</label>
+                        </div>
+                        <div>
+                            <input formControlName="medidasFurgon" type="radio" name="medidasFurgon"
+                                id="medidadsFurgon2" value="option2" />
+                            <label for="medidadsFurgon2">53 pies</label>
+                        </div>
+                    </div>
+                    <small *ngIf="validarCampo('medidasFurgon')" class="text-danger">* Este campo es
+                        requerido</small>
+                </div>
+            </div>
+
+            <div class="input-field">
+                <label for="">Nombre</label>
+                <div class="content-input">
+                    <input formControlName="nombre" type="text" class="input" placeholder="Nombre" />
+                    <small *ngIf="validarCampo('nombre')" class="text-danger">* Este campo es requerido</small>
+                </div>
+            </div>
+            <div class="input-field">
+                <label for="">Empresa</label>
+                <div class="content-input">
+                    <input formControlName="empresa" type="text" class="input" placeholder="Empresa" />
+                    <small *ngIf="validarCampo('empresa')" class="text-danger">* Este campo es requerido</small>
+                </div>
+            </div>
+            <div class="input-field">
+                <label for="">Correo</label>
+                <div class="content-input">
+                    <input formControlName="correo" type="email" class="input" placeholder="Correo" />
+                    <small *ngIf="validarCampo('correo')" class="text-danger">* Este campo es requerido</small>
+                </div>
+            </div>
+            <div class="input-field">
+                <label for="">Teléfono</label>
+                <div class="content-input">
+                    <input formControlName="telefono" type="number" class="input" placeholder="Teléfono" />
+                    <small *ngIf="validarCampo('telefono')" class="text-danger">* Este campo es
+                        requerido</small>
+                </div>
+            </div>
+        </form>
+        <div class="input-field" *ngIf="!detalleCotizado">
+            <!-- <div class="input-field"> -->
+            <button (click)="btnCotizar()" class="btn-cotizar">Cotizar</button>
+        </div>
+    </div>
+
+    <div class="detalle-cotizado" *ngIf="detalleCotizado">
+        <div class="precio">
+            <p>Horas de servicio {{this.horasDeServicio}}</p>
+            <h3>Total: <span>${{this.priecio}} USD</span></h3>
+        </div>
+        <div class="leyenda">
+            <p>
+                Pacifico Express, se caracteriza por el seguimiento constante en los
+                tiempos de entrega. A lo largo de la operación se han establecido
+                tiempos máximos de entrega en cada país (descritos en la
+                cotización), que buscan la pronta descarga en planta para que el
+                proceso comercial pueda seguir su curso y entregar productos frescos
+                lo antes posible. Las demoras generalmente se derivan de procesos
+                aduanales, permisos con errores, documentos que necesitan ser
+                corregidos, todas estas circunstancias no son parte del que hacer
+                del transporte como tal, sin embargo, se coordina constantemente con
+                el equipo aduanal con el que se esté trabajando para realizar
+                sugerencias de mejora, proveer información lo antes posible para
+                iniciar documentación con suficiente anticipación para evitar lo
+                máximo posibles atrasos. Es por ello que al transcurrir los tiempos
+                descritos, se genera un cobro por concepto de estadías o demoras.
+            </p>
+        </div>
+
+        <div class="input-field" *ngIf="detalleCotizado">
+            <!-- <div class="input-field"> -->
+            <button (click)="nuevaCotizacion()" class="btn-cotizar">Realizar nueva cotización</button>
+        </div>
+    </div>
+</div>
