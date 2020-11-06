@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { TallerService } from '../../../services/taller.service';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-cotizador-taller',
@@ -9,10 +12,40 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class CotizadorTallerComponent implements OnInit {
   // formulario
   forma: FormGroup;
-  emailValidator = '[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$';
-  phoneValidator: string = `^((\\+91-?)|0)?[0-9]{8}$`;
 
-  constructor(private bf: FormBuilder) {}
+  servicios$: Observable<any[]>;
+  dataServic: any = {};
 
-  ngOnInit(): void {}
+  tableValue: boolean = false;
+
+  constructor(private bf: FormBuilder, private tallerService: TallerService) {
+    this.formularioCotizador();
+  }
+
+  ngOnInit(): void {
+    this.obtenerServiciosDeTaller();
+  }
+
+  // Formulario cotiazdor
+  formularioCotizador() {
+    this.forma = this.bf.group({
+      servicio: ['', Validators.required],
+    });
+  }
+
+  obtenerServiciosDeTaller() {
+    this.servicios$ = this.tallerService.getAllRepuestos();
+  }
+
+  changeValue(value: any) {
+    this.tallerService
+      .getOneService(value)
+      .pipe(
+        map((resp) => {
+          this.tableValue = true;
+          this.dataServic = resp;
+        })
+      )
+      .subscribe();
+  }
 }

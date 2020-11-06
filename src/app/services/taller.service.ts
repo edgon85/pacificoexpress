@@ -14,9 +14,15 @@ export class TallerService {
     const url = this.urlProduct + `/servicios-mecanicos.json`;
 
     const data = this.http.get(url).pipe(
-      map((data) => Object.keys(data).map((k) => data[k])) // ordenar alfabeticamente
+      map((resp) => Object.keys(resp).map((k) => resp[k])) // ordenar alfabeticamente
     );
 
     return data;
+  }
+
+  public getOneService(serviceId: string) {
+    const url = this.urlProduct + `/servicios-mecanicos/${serviceId}.json`;
+
+    return this.http.get(url);
   }
 }
