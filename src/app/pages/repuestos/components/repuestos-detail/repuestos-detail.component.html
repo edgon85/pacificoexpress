@@ -1,0 +1,53 @@
+
+<section class="header-product">
+    <h2>{{ headerTitle }}</h2>
+</section>
+
+<section class="container repuestos">
+    <div class="content">
+        <div class="grid-items">
+            <!-- <ng-container *ngFor="let items of sidebarService.menuCategorias"> -->
+                <ng-container *ngIf="(repuesto$ | async) as repuestos">
+                <div class="card pointer" *ngFor="let repuesto of repuestos" (click)="dataRepuesto(repuesto)">
+                    <img [src]="repuesto.imagen" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ repuesto.nombre }}</h5>
+                        <button class="card__btn">Ver detalle <span>&rarr;</span></button>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</section>
+
+
+<div class="fondo-modal oculto" [class.oculto]="ocultarModal">
+  <div class="modal fade bs-example-modal-lg show" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" style="display: block;">
+  <div class="modal-dialog modal-lg">
+      <div class="modal-content" *ngIf="prodSelect">
+          <div class="modal-header">
+              <h4 class="modal-title" id="myLargeModalLabel">Detalle de repuesto</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true" (click)="rerrarModal()">×</button>
+          </div>
+          <div class="modal-body">
+              <div class="modal-contenido">
+                <div class="imagen">
+                  <img [src]="prodSelect.imagen" alt="">
+                </div>
+                <div class="detail">
+                  <h2>{{prodSelect.nombre}}</h2>
+                  <p *ngIf="prodSelect.marca !== 'sin marca'">Marca {{ prodSelect.marca }}</p>
+                  <p>Precio Q{{prodSelect.precio}}</p>
+                  <a href="#" class="btn btn-info">Solicitar información</a>
+                </div>
+              </div>
+          </div>
+      </div>
+      <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+</div>
+
+
+<app-footer></app-footer>

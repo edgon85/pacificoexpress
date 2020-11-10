@@ -1,0 +1,56 @@
+<section class="header">
+    <div class="header-top">
+        <div class="myContainer ">
+            <div class="contact-icons">
+                <ul>
+                    <li><img src="assets/images/icons/phone.png" alt=""><a href="#">+(502) 3728374</a></li>
+                    <li><img src="assets/images/icons/email.png" alt=""><a href="#">contacto@pacificoexpress.com.gt</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="social-icons">
+                <ul>
+                    <li><a href="#" target="_blank" rel="noopener noreferrer"><img
+                                src="assets/images/icons/facebook.png" alt=""></a></li>
+                    <li><a href="#" target="_blank" rel="noopener noreferrer"><img
+                                src="assets/images/icons/instagram.png" alt=""></a></li>
+                    <li><a href="#" target="_blank" rel="noopener noreferrer"><img
+                                src="assets/images/icons/whatsapp.png" alt=""></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="logo-search myContainer ">
+        <div class="logo" [routerLink]="['/inicio']">
+            <img src="assets/images/logos/logo.png" alt="">
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Buscar...">
+            <div class="icon-search">
+                <img src="assets/images/icons/search.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="icons myContainer ">
+        <div class="icon">
+            <a [routerLink]="['/vehiculos']" routerLinkActive="active"><i
+                    class="demo-icon icon-transportes">&#xe800;</i> vehículos</a>
+        </div>
+        <div class="icon">
+            <a [routerLink]="['/repuestos']"><i class="demo-icon icon-repuestos">&#xe803;</i> repuestos</a>
+        </div>
+        <div class="icon">
+            <a [routerLink]="['/transportes']"><i class="demo-icon icon-fletes">&#xe802;</i> transporte</a>
+        </div>
+        <div class="icon">
+            <a [routerLink]="['/cotizador']"><i class="demo-icon icon-cotizador">&#xe801;</i> cotizador</a>
+        </div>
+        <div class="icon">
+            <a [routerLink]="['/gps']"><i class="demo-icon icon-transportes-gps">&#xe805;</i> gps</a>
+        </div>
+        <div class="icon">
+            <a [routerLink]="['/taller']"><i class="demo-icon icon-taller">&#xe804;</i> Taller</a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,260 @@
+<app-header></app-header>
+
+<section class="header-taller">
+  <div class="myContainer">
+    <h2>Que hacemos</h2>
+    <p>
+      Ofrecemos servicio completo de reparación y mantenimiento de automóviles.
+    </p>
+    <div class="title-separator"></div>
+  </div>
+</section>
+
+<section class="myContainer service-block">
+  <div class="service first-service">
+    <div class="caption">
+      <div class="vert-wrap">
+        <div class="vert">
+          <h3>Mantenimiento<br />preventivo</h3>
+          <div class="text">
+            La mejor forma de minimizar las averías es realizar un mantenimiento
+            de rutina.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="service">
+    <div class="imagen">
+      <img src="assets/images/taller/service-5-bg.jpg" alt="" />
+    </div>
+  </div>
+  <div class="service">
+    <div class="caption">
+      <div class="vert-wrap">
+        <div class="vert">
+          <h3>Reparaciones en<br />ruta</h3>
+          <div class="text">
+            Nuestro equipo te respalda si tu vehículo pesado falla. Nosotros llegamos hasta donde estés.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="service">
+    <div class="imagen">
+      <img src="assets/images/taller/service-4-bg.jpg" alt="" />
+    </div>
+  </div>
+  <div class="service">
+    <div class="caption">
+      <div class="vert-wrap">
+        <div class="vert">
+          <h3>Mejoras y reparaciones<br />en taller</h3>
+          <div class="text">
+            Programa tu visita para tener a tu disposición al equipo de mecánica, soldadura, enderzado y pintura.   
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="service">
+    <div class="imagen">
+      <img src="assets/images/taller/service-6-bg.jpg" alt="" />
+    </div>
+  </div>
+</section>
+
+<section class="header-taller">
+  <div class="myContainer">
+    <h2>Nuestros planes de precios</h2>
+    <p>Paquetes de servicio de automóviles a precio fijo</p>
+    <div class="title-separator"></div>
+  </div>
+</section>
+
+<!-- <section class="prices">
+  <div class="myContainer">
+    <div class="content">
+      <div class="grid-items">
+        <ng-container *ngIf="servicios$ | async as servicios">
+          <div class="card" *ngFor="let servicio of servicios">
+            <div class="card-content">
+              <div class="title">{{ servicio.nombre | uppercase}}</div>
+              <div class="price">Q{{ servicio.precio | number : '1.2-2' }}</div>
+              <img [src]="servicio.imagen" alt="" />
+              <div class="description">{{ servicio.detalle }}</div>
+              <button class="btn">Más información</button>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<section class="precios myContainer">
+  <div class="table-01-wrapper">
+    <table class="table-01">
+      <thead>
+        <tr>
+          <th>Servicio</th>
+          <th>Tiempo aproximado</th>
+          <th>Costo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngIf="servicios$ | async as servicios">
+          <tr *ngFor="let servicio of servicios">
+            <td>{{ servicio.nombre }}</td>
+            <td>1 Hora</td>
+            <td>Q{{ servicio.precio | number: "1.2-2" }}</td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="schedule">
+  <div class="block position-relative overflow-hidden">
+    <div class="section__text-background text-color02 text-center text-background__center">
+      Programar cita
+    </div>
+    <div class="text-center">
+      <h2 class="h-lg">
+        Programe <span class="color">su cita</span> hoy
+      </h2>
+      <p class="info">
+        Especialistas en servicio de reparación y mantenimiento
+      </p>
+      <h2 class="h-phone">+(502) 5531 0953</h2>
+      <div class="btn-inline">
+        <button class="btn btn-border" href="#" data-toggle="modal" data-target="#appointmentForm">
+          <span>Hacer cita</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- <div class="modal fade in" id="appointmentForm" style="display: block;">
+  <div class="modal-dialog container">
+    <div class="modal-content">
+      <div class="modal-header"><a href="#" class="appointment" data-toggle="modal" data-target="#appointmentForm"><i
+            class="icon-shape icon"></i> <span>Appointment</span></a> <button type="button" class="close"
+          data-dismiss="modal" aria-label="Close"><i class="icon-close"></i></button></div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <h2 class="modal-title-main">Schedule <span class="color">Auto Service</span></h2> To schedule an appointment
+          give us a call at 1-800-123-4567 or fill out the form below with your information and requested services.<div
+            class="divider divider-sm"></div>
+          <div role="form" class="wpcf7" id="wpcf7-f710-o1" lang="en-US" dir="ltr">
+            <div class="screen-reader-response" role="alert" aria-live="polite"></div>
+            <form action="/car-repair-service-v4/demo2/pricing-coupons/#wpcf7-f710-o1" method="post"
+              class="wpcf7-form init" enctype="multipart/form-data" novalidate="novalidate">
+              <div style="display: none;"> <input type="hidden" name="_wpcf7" value="710"> <input type="hidden"
+                  name="_wpcf7_version" value="5.2.2"> <input type="hidden" name="_wpcf7_locale" value="en_US"> <input
+                  type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f710-o1"> <input type="hidden"
+                  name="_wpcf7_container_post" value="0"> <input type="hidden" name="_wpcf7_posted_data_hash" value="">
+              </div>
+              <div class="contact-form form-horizontal form-default">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h5>Contact Info</h5>
+                    <div class="form-group"> <span class="wpcf7-form-control-wrap fname"><input type="text" name="fname"
+                          value="" size="40"
+                          class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control"
+                          aria-required="true" aria-invalid="false" placeholder="Your name"></span></div>
+                    <div class="form-group"> <span class="wpcf7-form-control-wrap your-phone"><input type="text"
+                          name="your-phone" value="" size="40"
+                          class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control"
+                          aria-required="true" aria-invalid="false" placeholder="Phone number"></span></div>
+                    <div class="form-group"> <span class="wpcf7-form-control-wrap your-email"><input type="email"
+                          name="your-email" value="" size="40"
+                          class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email form-control"
+                          aria-required="true" aria-invalid="false" placeholder="address@youremail.com"></span></div>
+                    <p></p>
+                  </div>
+                  <div class="divider visible-sm visible-xs"></div>
+                  <div class="col-md-4">
+                    <h5>Car Detail</h5>
+                    <div class="form-group"> <span class="wpcf7-form-control-wrap car-model"><input type="text"
+                          name="car-model" value="" size="40"
+                          class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control"
+                          aria-required="true" aria-invalid="false" placeholder="Vehicle, Make and Model"></span></div>
+                    <div class="form-group"> <span class="wpcf7-form-control-wrap car-year"><input type="text"
+                          name="car-year" value="" size="40"
+                          class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control"
+                          aria-required="true" aria-invalid="false" placeholder="Year"></span></div>
+                    <div class="form-group">
+                      <div class="select-wrapper"> <span class="wpcf7-form-control-wrap select1"><select name="select1"
+                            class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required input-custom"
+                            aria-required="true" aria-invalid="false">
+                            <option value="2001">2001</option>
+                            <option value="2002">2002</option>
+                            <option value="2003">2003</option>
+                            <option value="2004">2004</option>
+                            <option value="2005">2005</option>
+                            <option value="2006">2006</option>
+                            <option value="2007">2007</option>
+                            <option value="2008">2008</option>
+                            <option value="2009">2009</option>
+                            <option value="2010">2010</option>
+                          </select></span></div>
+                      <p></p>
+                    </div>
+                    <p></p>
+                  </div>
+                  <div class="divider visible-sm visible-xs"></div>
+                  <div class="col-md-4">
+                    <h5>Appointment Details</h5>
+                    <div class="form-group">
+                      <div class="datetimepicker-wrap"> <span class="wpcf7-form-control-wrap date"><input type="text"
+                            name="date" value="" size="40"
+                            class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control datetimepicker"
+                            aria-required="true" aria-invalid="false" placeholder="Date"></span></div>
+                      <p></p>
+                    </div>
+                    <div class="form-group">
+                      <div class="timepicker-wrap"> <span class="wpcf7-form-control-wrap time"><input type="text"
+                            name="time" value="" size="40"
+                            class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control timepicker"
+                            aria-required="true" aria-invalid="false" placeholder="10 : 00"></span></div>
+                      <p></p>
+                    </div>
+                    <div class="form-group">
+                      <div class="input-group input-type-file"> <span class="wpcf7-form-control-wrap your-file"><input
+                            type="file" name="your-file" size="40"
+                            class="wpcf7-form-control wpcf7-file form-control input-lg" accept=".jpg,.jpeg,.png"
+                            aria-invalid="false"></span></div>
+                      <p></p>
+                    </div>
+                    <p></p>
+                  </div>
+                  <p></p>
+                </div>
+                <div class="divider divider-sm"></div>
+                <div class="row">
+                  <div class="col-sm-4 col-md-3"> <button id="submit"
+                      class="wpcf7-form-control wpcf7-submit btn btn-border btn-invert"><span>Submit</span></button><span
+                      class="ajax-loader"></span></div>
+                  <div class="divider visible-xs"></div>
+                  <div class="col-sm-8 col-md-9">
+                    <div class="notes-custom">Please note that the date and time you requested may not be available.
+                    </div>
+                    <p></p>
+                  </div>
+                  <p></p>
+                </div>
+              </div>
+              <div class="wpcf7-response-output" role="alert" aria-hidden="true"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<app-footer></app-footer>

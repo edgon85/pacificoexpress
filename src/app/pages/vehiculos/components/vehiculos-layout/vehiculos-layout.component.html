@@ -1,0 +1,53 @@
+<section class="prices">
+  <div class="myContainer">
+    <div class="content">
+      <div *ngIf="cargando" class="loading mt-5">
+        <app-loading></app-loading>
+      </div>
+      <div class="grid-items">
+        <ng-container *ngIf="vehiculos$ | async as servicios">
+          <ng-container *ngFor="let servicio of servicios">
+            <div class="card pointer" (click)="vehiculoDetail(servicio)">
+              <div class="card-content">
+                <!-- <div class="price">Q{{ servicio.precio | number : '1.2-2' }}</div> -->
+                <img [src]="servicio.image | noImage" alt="" />
+                <div class="title">{{ servicio.name | uppercase}}</div>
+                <!-- <div class="description">{{ servicio.detalle }}</div> -->
+                <!-- <button class="btn">Más información</button> -->
+              </div>
+            </div>
+          </ng-container>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="fondo-modal oculto" [class.oculto]="ocultarModal">
+  <div class="modal fade bs-example-modal-lg show" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    style="display: block;">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content" *ngIf="prodSelect">
+        <div class="modal-header">
+          <h4 class="modal-title" id="myLargeModalLabel">Detalle</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true" (click)="cerrarModal()">×</button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-contenido">
+            <div class="imagen">
+              <img [src]="prodSelect.image | noImage" alt="">
+            </div>
+            <div class="detail">
+              <h2>{{prodSelect.name}}</h2>
+              <p>{{ prodSelect.detail }}</p>
+              <p>Precio <span>Q{{prodSelect.price}}</span> </p>
+              <!-- <a href="#" class="btn btn-info">Solicitar información</a> -->
+              <a class="btn btn-info" href="https://api.whatsapp.com/send?phone=50255310953" target="_blank" rel="noopener noreferrer">Solicitar más información</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

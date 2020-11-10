@@ -1,0 +1,125 @@
+@import '../../../../../assets/variables.scss';
+
+.prices {
+  .content {
+    padding: 2em 0;
+    .grid-items {
+      display: grid;
+      gap: 1em;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+      .card {
+        padding: 0.5em 0.2em;
+        .card-content {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+
+          .title {
+            font-size: 1em;
+            line-height: 29px;
+            font-weight: 600;
+            color: #3a3a3a;
+            transition: all 0.3s ease 0s;
+            padding: 0 25px;
+          }
+
+          .price {
+            font-size: 44px;
+            font-weight: 600;
+            transition: all 0.3s ease 0s;
+            // margin-top: 19px;
+          }
+
+          .description {
+            color: #3a3a3a;
+            transition: all 0.3s ease 0s;
+            margin-top: 12px;
+            padding-left: 25px;
+            padding-right: 25px;
+            font-size: 16px;
+            line-height: 25px;
+          }
+
+          img {
+            width: 100%;
+          }
+
+          .btn {
+            margin-top: 0.8em;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Modal */
+.fondo-modal {
+  background-color: rgba(0, 0, 0, 0.4);
+  left: 0px;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 999;
+}
+
+.oculto {
+  display: none;
+}
+
+/* Modal */
+
+.modal-content{
+  // min-height: 50vh;
+}
+.modal-body{
+  .modal-contenido{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: .5em;
+
+    grid-template-areas: 'imagen detail';
+
+    .imagen{
+      grid-area: imagen;
+      img{
+        width: 100%;
+        vertical-align: top;
+      }
+    }
+
+    .detail{
+      grid-area: detail;
+      display: flex;
+      flex-direction: column;
+      h2{
+        color: #000;
+        text-transform: capitalize;
+      }
+      p{
+        color: gray;
+      }
+
+      p:nth-of-type(2) {
+        font-weight: 600;
+        span{
+          color: $primary-color;
+        }
+      }
+    }
+
+    @media screen and (max-width: 500px){
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+
+      grid-template-areas: 
+        'imagen' 
+        'detail';
+    }
+  }
+}

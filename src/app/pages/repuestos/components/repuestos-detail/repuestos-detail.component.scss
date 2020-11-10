@@ -1,0 +1,115 @@
+@import '../../../.././../assets/variables.scss';
+
+.container.repuestos{
+  height: 80vh;
+}
+
+.header-product {
+  padding: 5em 0;
+  display: flex;
+  justify-content: center;
+  // background-image: url('../../../../../assets/images/bg-1.jpg');
+  background-color: #4b4a4a;
+  background-blend-mode: soft-light;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  h2 {
+    font-weight: 800;
+    color: $color-white;
+    font-size: 30px;
+    font-family: $font-primary;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+}
+
+.content{
+  padding: 2em 0;
+  .grid-items{
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .card-title{
+    text-transform: capitalize;
+  }
+
+  .card__btn {
+    display: block;
+    width: 100%;
+    // padding: 1.5rem;
+    font-size: 1em;
+    text-align: center;
+    color: $secondary-color;
+    background-color: #e6ecff;
+    border: none;
+    border-radius: .4rem;
+    transition: .2s;
+    cursor: pointer;
+
+    
+    span {
+      margin-left: 1rem;
+      transition: .2s;
+    }
+  }
+}
+
+
+.fondo-modal{
+  background-color: rgba(0, 0, 0, 0.4);
+  left: 0px;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 999;
+}
+
+.oculto{
+  display: none;
+}
+
+
+/* Modal */
+.modal-body{
+  .modal-contenido{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: .5em;
+
+    grid-template-areas: 'imagen detail';
+
+    .imagen{
+      grid-area: imagen;
+      img{
+        width: 100%;
+        vertical-align: top;
+      }
+    }
+
+    .detail{
+      grid-area: detail;
+      h2{
+        color: #000;
+        text-transform: capitalize;
+      }
+      p{
+        color: gray;
+      }
+    }
+
+    @media screen and (max-width: 500px){
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+
+      grid-template-areas: 
+        'imagen' 
+        'detail';
+    }
+  }
+}

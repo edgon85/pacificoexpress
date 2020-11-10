@@ -1,0 +1,39 @@
+$color-white: #fff;
+$color-black: #000000;
+// $darken: #3a4348;
+
+$primary-color: #1c2240;
+$secondary-color: #003d73;
+$tertiary-color: #2e2d2d;
+
+@font-face {
+  font-family: "bebas_kai";
+  src: url("/assets/fonts/bebas_kai/BebasKai.ttf") format("woff2"),
+    url("/assets/fonts/bebas_kai/BebasKai.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "berlin-sans-fb-regular";
+  src: url("/assets/fonts/BerlinSansFBRegular/BerlinSansFBRegular.ttf")
+      format("woff2"),
+    url("/assets/fonts/BerlinSansFBRegular/BerlinSansFBRegular.ttf")
+      format("truetype");
+}
+
+$font-primary: "bebas_kai", Arial, sans-serif;
+$font-secondary: "berlin-sans-fb-regular", Georgia, serif;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin transition($transition) {
+  -moz-transition: all $transition ease;
+  -o-transition: all $transition ease;
+  -webkit-transition: all $transition ease;
+  -ms-transition: all $transition ease;
+  transition: all $transition ease;
+}

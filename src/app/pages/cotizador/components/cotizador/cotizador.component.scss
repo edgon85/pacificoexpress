@@ -1,0 +1,105 @@
+@import "../../../../../assets/variables.scss";
+
+.myContainer {
+  min-height: 80vh;
+}
+
+.btnSelected {
+  background: $secondary-color !important;
+  color: $color-white !important;
+}
+
+.cotizador {
+  display: grid;
+  grid-template-columns: 10em 1fr;
+  grid-template-rows: 1 auto;
+  grid-template-areas: "sidebar content";
+
+  .sidebar {
+    grid-area: sidebar;
+    height: 300px;
+    // border: 1px solid red;
+    padding: 0.5em;
+
+    p {
+      padding: 0.5em;
+      background: $primary-color;
+      color: $color-white;
+      text-align: center;
+      border-radius: 5px;
+      font-family: $font-primary;
+    }
+  }
+
+  .content {
+    grid-area: content;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+
+    grid-template-areas:
+      "section_header"
+      "section_content";
+
+    // border: 1px solid green;
+    // text-align: center;
+    padding: 0.5em;
+
+    .cotizador-header {
+      grid-area: section_header;
+      // border: 1px solid red;
+      border-bottom: 2px solid $secondary-color;
+      text-align: center;
+
+      .btn-header-cotizador {
+        width: 16rem;
+        height: 3em;
+        font-size: 1em;
+        margin-left: 2px;
+        border: none;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        background: #efe300;
+        color: gray;
+        line-height: 10px;
+        padding: 3px;
+        text-transform: uppercase;
+        outline: none;
+        cursor: pointer;
+
+        /*         &:first-child {
+          background-color: #efe300;
+        }
+
+        &:last-child {
+          background-color: $secondary-color;
+          color: gray;
+        } */
+      }
+    }
+
+    .cotizador-content {
+      grid-area: section_content;
+      height: 600px;
+      padding: 1em;
+      // border: 1px solid purple;
+    }
+  }
+
+  .btn-cotizar {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 1em;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    border-radius: 3px;
+    background: $primary-color;
+    color: $color-white;
+    text-transform: uppercase;
+    &:hover {
+      background: $secondary-color;
+    }
+  }
+}

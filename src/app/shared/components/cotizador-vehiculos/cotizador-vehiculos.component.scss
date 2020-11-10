@@ -1,0 +1,148 @@
+@import "../../../../assets/variables.scss";
+
+.vehiculos {
+  /* display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+
+    grid-template-areas: ''; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  grid-area: section_1;
+  max-width: 500px;
+  border: 1px solid $primary-color;
+  border-radius: 5px;
+  // margin: 10px auto;
+  padding: 30px;
+
+  .input-field {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+
+    label {
+      width: 200px;
+      color: $primary-color;
+      margin-right: 10px;
+      font-size: 14px;
+    }
+
+    .input {
+      width: 100%;
+      outline: none;
+      border: 1px solid $secondary-color;
+      font-size: 15px;
+      padding: 8px 10px;
+      transition: all 0.3s ease;
+      &:focus {
+        border: 1px solid $primary-color;
+      }
+    }
+
+    .custom-selector {
+      position: relative;
+      width: 100%;
+      height: 37px;
+      font-size: 0.8em;
+
+      .selector {
+        appearance: none;
+        border: 1px solid $secondary-color;
+        outline: none;
+        width: 100%;
+        height: 100%;
+        padding: 8px 10px;
+        &:focus {
+          border: 1px solid $primary-color;
+        }
+        &:invalid {
+          color: red;
+        }
+      }
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 12px;
+        right: 10px;
+        border: 8px solid;
+        border-color: #d5dbd9 transparent transparent transparent;
+        pointer-events: none;
+      }
+
+      .select-option {
+        color: gray;
+      }
+    }
+
+    .form-check-input {
+      margin-right: 2px;
+    }
+
+    .content-input {
+      width: 100%;
+      .inlines {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        label {
+          width: 5em;
+        }
+      }
+    }
+    .text-danger {
+      font-size: 0.5em;
+      color: red;
+    }
+  }
+}
+
+.detalle-cotizado {
+  grid-area: section_2;
+  // border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  padding: 5em;
+
+  .precio {
+    h3 {
+      font-family: $font-primary;
+      font-size: 2em;
+    }
+  }
+
+  .leyenda {
+    padding: 2em;
+    p {
+      padding: 1em;
+      background: $secondary-color;
+      color: $color-white;
+      font-size: 12px;
+      border-radius: 2px;
+    }
+  }
+}
+
+.btn-cotizar {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 1em;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  border-radius: 3px;
+  background: $primary-color;
+  color: $color-white;
+  text-transform: uppercase;
+  &:hover {
+    background: $secondary-color;
+  }
+}
