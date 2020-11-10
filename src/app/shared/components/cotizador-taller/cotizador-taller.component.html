@@ -1,1 +1,54 @@
-<p>cotizador-taller works!</p>
+<div class="cotizador-taller">
+
+    <section class="header-taller">
+        <div class="myContainer">
+            <h2>Nuestros planes de precios</h2>
+            <p>Paquetes de servicio de automóviles a precio fijo</p>
+            <div class="title-separator"></div>
+        </div>
+    </section>
+
+    <div class="form">
+        <form [formGroup]="forma">
+            <div class="input-field">
+                <label>Servicio</label>
+                <div class="content-input">
+                    <div class="custom-selector">
+                        <select class="selector" formControlName="servicio" name="" #f (change)="changeValue(f.value)">
+                            <option value="" disabled selected hidden>Seleccione un servicio</option>
+                            <ng-container *ngIf="servicios$ | async as servicios">
+                                <!-- <option *ngFor="let ruta of rutas" [value]="ruta.id"> -->
+                                <option *ngFor="let servicio of servicios" [value]="servicio.id">
+                                    {{ servicio.nombre }}
+                                </option>
+                            </ng-container>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="service-detail" *ngIf="tableValue">
+        <section class="precios myContainer">
+            <div class="table-01-wrapper">
+                <table class="table-01">
+                    <thead>
+                        <tr>
+                            <th>Servicio</th>
+                            <th>Tiempo aproximado</th>
+                            <th>Costo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{ dataServic.nombre }}</td>
+                            <td>{{ dataServic.tiempoEstimado }}</td>
+                            <td>Q{{ dataServic.precio | number: "1.2-2" }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</div>
