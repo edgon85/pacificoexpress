@@ -27,6 +27,7 @@ export class CotizadorVehiculosComponent implements OnInit {
     { id: 'CR-SV', name: 'San José, Costa Rica - El Salvador' },
     { id: 'CR-HO', name: 'San José, Costa Rica - Tegucigalpa, Honduras' },
     { id: 'CR-NI', name: 'San José, Costa Rica - Nicaragua' },
+    { id: 'OTRO', name: 'Otro' },
   ];
 
   temperaturas = [
@@ -48,6 +49,9 @@ export class CotizadorVehiculosComponent implements OnInit {
   emailValidator = '[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$';
   phoneValidator: string = `^((\\+91-?)|0)?[0-9]{8}$`;
 
+  /* <=================================> */
+  noRuta: boolean = false;
+
   constructor(private bf: FormBuilder) {
     this.formularioCotizador();
   }
@@ -59,6 +63,8 @@ export class CotizadorVehiculosComponent implements OnInit {
     this.forma = this.bf.group({
       // producto: ['', Validators.required],
       ruta: ['', Validators.required],
+      origen: [''],
+      destino: [''],
       temperatura: ['', Validators.required],
       medidasFurgon: ['', Validators.required],
       nombre: ['', Validators.required],
@@ -83,6 +89,49 @@ export class CotizadorVehiculosComponent implements OnInit {
     return this.forma.get(nombre).invalid && this.forma.get(nombre).touched;
   }
 
+  /* <======================> */
+  /* Obtener el balor de ruta */
+  /* <======================> */
+  changeValueRuta(value: any) {
+    console.log(value);
+    if (value === 'OTRO') {
+      this.noRuta = true;
+    } else {
+      this.noRuta = false;
+    }
+  }
+  /* <======================> */
+
+  /* <=========================> */
+  /* boton de cotizar sin datos  */
+  /* <=========================> */
+  btnCotizar2() {
+    // si la forma de checkout es valida
+    if (this.forma.invalid) {
+      return Object.values(this.forma.controls).forEach((control) => {
+        if (control instanceof FormGroup) {
+          Object.values(control.controls).forEach(
+            (resp) => resp.markAsTouched(),
+            console.log('Llene campos obligatorios')
+            // Swal.fire('Llene campos obligatorios')
+          );
+        } else {
+          control.markAsTouched();
+
+          console.log('llenar campor obligatorios');
+          // Swal.fire('Llene campos obligatorios');
+        }
+      });
+    }
+
+    console.log(this.forma.value);
+    this.ruta = this.forma.value.ruta;
+    this.temperatura = this.forma.value.temperatura;
+  }
+
+  /* <=========================> */
+  /* boton de cotizar con datos  */
+  /* <=========================> */
   public btnCotizar() {
     // si la forma de checkout es valida
     if (this.forma.invalid) {
@@ -226,6 +275,9 @@ export class CotizadorVehiculosComponent implements OnInit {
     } else if (this.ruta === 'CR-NI' && this.temperatura === '0-MENOS-0') {
       this.horasDeServicio = 48;
       this.priecio = 1700;
+    } else if (this.temperatura === 'no-refrigerado') {
+      this.horasDeServicio = 0;
+      this.priecio = 0;
     }
 
     this.detalleCotizado = true;
