@@ -10,6 +10,7 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { CotizadorVehiculosComponent } from './components/cotizador-vehiculos/cotizador-vehiculos.component';
 import { CotizadorTallerComponent } from './components/cotizador-taller/cotizador-taller.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProgrameCitaComponent } from './components/programe-cita/programe-cita.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LoadingComponent,
     CotizadorVehiculosComponent,
     CotizadorTallerComponent,
+    ProgrameCitaComponent,
   ],
   imports: [RouterModule, CommonModule, FormsModule, ReactiveFormsModule],
   exports: [
@@ -32,6 +34,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LoadingComponent,
     CotizadorVehiculosComponent,
     CotizadorTallerComponent,
+    ProgrameCitaComponent,
   ],
 })
 export class SharedModule {}
