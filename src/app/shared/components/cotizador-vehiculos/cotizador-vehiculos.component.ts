@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cotizador-vehiculos',
@@ -40,6 +41,7 @@ export class CotizadorVehiculosComponent implements OnInit {
   detalleCotizado: boolean = false;
 
   temperatura: string = '';
+  rutaId: string = '';
   ruta: string = '';
   horasDeServicio: number = 0;
   priecio: number = 0;
@@ -125,8 +127,30 @@ export class CotizadorVehiculosComponent implements OnInit {
     }
 
     console.log(this.forma.value);
-    this.ruta = this.forma.value.ruta;
+    this.rutaId = this.forma.value.ruta;
     this.temperatura = this.forma.value.temperatura;
+
+    Swal.fire({
+      icon: 'success',
+      title: 'Solicitud enviada',
+      text:
+        'En un momento un asesor se comunicara con ud para darle información sobre la ruta solicitada!',
+    }).then((result) => {
+      this.forma.reset({
+        producto: '',
+        ruta: '',
+        origen: '',
+        destino: '',
+        temperatura: '',
+        medidas: '',
+        nombre: '',
+        empresa: '',
+        correo: '',
+        telefono: '',
+      });
+    });
+
+    this.noRuta = false;
   }
 
   /* <=========================> */
@@ -152,129 +176,170 @@ export class CotizadorVehiculosComponent implements OnInit {
     }
 
     console.log(this.forma.value);
-    this.ruta = this.forma.value.ruta;
+    this.rutaId = this.forma.value.ruta;
     this.temperatura = this.forma.value.temperatura;
 
-    if (this.ruta === 'HI-SV' && this.temperatura === '30-0-F') {
+    if (this.rutaId === 'HI-SV' && this.temperatura === '30-0-F') {
       this.horasDeServicio = 72;
       this.priecio = 1300;
-    } else if (this.ruta === 'HI-SV' && this.temperatura === '0-MENOS-0') {
+      this.ruta = 'Ciudad Hidalgo M.X - El Salvador';
+    } else if (this.rutaId === 'HI-SV' && this.temperatura === '0-MENOS-0') {
       this.horasDeServicio = 72;
       this.priecio = 1600;
-    } else if (this.ruta === 'HI-HO' && this.temperatura === '30-0-F') {
+      this.ruta = 'Ciudad Hidalgo M.X - El Salvador';
+    } else if (this.rutaId === 'HI-HO' && this.temperatura === '30-0-F') {
       this.horasDeServicio = 96;
       this.priecio = 2100;
-    } else if (this.ruta === 'HI-HO' && this.temperatura === '0-MENOS-0') {
+      this.ruta = 'Ciudad Hidalgo M.X - Tegucigalpa, Honduras';
+    } else if (this.rutaId === 'HI-HO' && this.temperatura === '0-MENOS-0') {
       this.horasDeServicio = 96;
       this.priecio = 2400;
-    } else if (this.ruta === 'HI-NI' && this.temperatura === '30-0-F') {
+      this.ruta = 'Ciudad Hidalgo M.X - Tegucigalpa, Honduras';
+    } else if (this.rutaId === 'HI-NI' && this.temperatura === '30-0-F') {
       this.horasDeServicio = 120;
       this.priecio = 2750;
-    } else if (this.ruta === 'HI-NI' && this.temperatura === '0-MENOS-0') {
+      this.ruta = 'Ciudad Hidalgo M.X - Nicaragua';
+    } else if (this.rutaId === 'HI-NI' && this.temperatura === '0-MENOS-0') {
       this.horasDeServicio = 120;
       this.priecio = 2400;
-    } else if (this.ruta === 'HI-CR' && this.temperatura === '30-0-F') {
+      this.ruta = 'Ciudad Hidalgo M.X - Nicaragua';
+    } else if (this.rutaId === 'HI-CR' && this.temperatura === '30-0-F') {
       this.horasDeServicio = 144;
       this.priecio = 2850;
-    } else if (this.ruta === 'HI-CR' && this.temperatura === '0-MENOS-0') {
+      this.ruta = 'Ciudad Hidalgo M.X - San José, Costa Rica';
+    } else if (this.rutaId === 'HI-CR' && this.temperatura === '0-MENOS-0') {
       this.horasDeServicio = 144;
       this.priecio = 3350;
-    } else if (this.ruta === 'HI-PA' && this.temperatura === '30-0-F') {
+      this.ruta = 'Ciudad Hidalgo M.X - San José, Costa Rica';
+    } else if (this.rutaId === 'HI-PA' && this.temperatura === '30-0-F') {
       this.horasDeServicio = 168;
       this.priecio = 3800;
-    } else if (this.ruta === 'HI-PA' && this.temperatura === '0-MENOS-0') {
+      this.ruta = 'Ciudad Hidalgo M.X - Panamá';
+    } else if (this.rutaId === 'HI-PA' && this.temperatura === '0-MENOS-0') {
       this.horasDeServicio = 96;
       this.priecio = 4300;
-    } else if (this.ruta === 'NI-HI' && this.temperatura === '30-0-F') {
+      this.ruta = 'Ciudad Hidalgo M.X - Panamá';
+    } else if (this.rutaId === 'NI-HI' && this.temperatura === '30-0-F') {
       this.horasDeServicio = 96;
       this.priecio = 2300;
-    } else if (this.ruta === 'NI-HI' && this.temperatura === '0-MENOS-0') {
+      this.ruta = 'Nicaragua - Ciudad Hidalgo M.X';
+    } else if (this.rutaId === 'NI-HI' && this.temperatura === '0-MENOS-0') {
       this.horasDeServicio = 96;
       this.priecio = 2650;
+      this.ruta = 'Nicaragua - Ciudad Hidalgo M.X';
     } else if (
-      this.ruta === 'Guate-Teculutan' &&
+      this.rutaId === 'Guate-Teculutan' &&
       this.temperatura === '30-0-F'
     ) {
       this.horasDeServicio = 24;
       this.priecio = 500;
+      this.ruta = 'Ciudad de Guatemala - Teculutan';
     } else if (
-      this.ruta === 'Guate-Teculutan' &&
+      this.rutaId === 'Guate-Teculutan' &&
       this.temperatura === '0-MENOS-0'
     ) {
       this.horasDeServicio = 24;
       this.priecio = 650;
-    } else if (this.ruta === 'Guate-Xela' && this.temperatura === '30-0-F') {
+      this.ruta = 'Ciudad de Guatemala - Teculutan';
+    } else if (this.rutaId === 'Guate-Xela' && this.temperatura === '30-0-F') {
       this.horasDeServicio = 24;
       this.priecio = 650;
-    } else if (this.ruta === 'Guate-Xela' && this.temperatura === '0-MENOS-0') {
+      this.ruta = 'Ciudad de Guatemala - Quetzaltenango';
+    } else if (
+      this.rutaId === 'Guate-Xela' &&
+      this.temperatura === '0-MENOS-0'
+    ) {
       this.horasDeServicio = 24;
       this.priecio = 750;
-    } else if (this.ruta === 'GU-SV' && this.temperatura === '30-0-F') {
+      this.ruta = 'Ciudad de Guatemala - Quetzaltenango';
+    } else if (this.rutaId === 'GU-SV' && this.temperatura === '30-0-F') {
       this.horasDeServicio = 48;
       this.priecio = 1000;
-    } else if (this.ruta === 'GU-SV' && this.temperatura === '0-MENOS-0') {
+      this.ruta = 'Ciudad de Guatemala - El Salvador';
+    } else if (this.rutaId === 'GU-SV' && this.temperatura === '0-MENOS-0') {
       this.horasDeServicio = 48;
       this.priecio = 1300;
-    } else if (this.ruta === 'GU-HO' && this.temperatura === '30-0-F') {
+      this.ruta = 'Ciudad de Guatemala - El Salvador';
+    } else if (this.rutaId === 'GU-HO' && this.temperatura === '30-0-F') {
       this.horasDeServicio = 72;
       this.priecio = 1700;
-    } else if (this.ruta === 'GU-HO' && this.temperatura === '0-MENOS-0') {
+      this.ruta = '';
+    } else if (this.rutaId === 'GU-HO' && this.temperatura === '0-MENOS-0') {
       this.horasDeServicio = 72;
       this.priecio = 2000;
-    } else if (this.ruta === 'GU-NI' && this.temperatura === '30-0-F') {
+      this.ruta = '';
+    } else if (this.rutaId === 'GU-NI' && this.temperatura === '30-0-F') {
       this.horasDeServicio = 96;
       this.priecio = 2000;
-    } else if (this.ruta === 'GU-NI' && this.temperatura === '0-MENOS-0') {
+      this.ruta = '';
+    } else if (this.rutaId === 'GU-NI' && this.temperatura === '0-MENOS-0') {
       this.horasDeServicio = 96;
       this.priecio = 2350;
-    } else if (this.ruta === 'GU-CR' && this.temperatura === '30-0-F') {
+      this.ruta = '';
+    } else if (this.rutaId === 'GU-CR' && this.temperatura === '30-0-F') {
       this.horasDeServicio = 120;
       this.priecio = 2500;
-    } else if (this.ruta === 'GU-CR' && this.temperatura === '0-MENOS-0') {
+      this.ruta = '';
+    } else if (this.rutaId === 'GU-CR' && this.temperatura === '0-MENOS-0') {
       this.horasDeServicio = 120;
       this.priecio = 2900;
-    } else if (this.ruta === 'GU-PA' && this.temperatura === '30-0-F') {
+      this.ruta = '';
+    } else if (this.rutaId === 'GU-PA' && this.temperatura === '30-0-F') {
       this.horasDeServicio = 144;
       this.priecio = 3500;
-    } else if (this.ruta === 'GU-PA' && this.temperatura === '0-MENOS-0') {
+      this.ruta = '';
+    } else if (this.rutaId === 'GU-PA' && this.temperatura === '0-MENOS-0') {
       this.horasDeServicio = 144;
       this.priecio = 4000;
-    } else if (this.ruta === 'CR-BE' && this.temperatura === '30-0-F') {
+      this.ruta = '';
+    } else if (this.rutaId === 'CR-BE' && this.temperatura === '30-0-F') {
       this.horasDeServicio = 120;
       this.priecio = 3200;
-    } else if (this.ruta === 'CR-BE' && this.temperatura === '0-MENOS-0') {
+      this.ruta = '';
+    } else if (this.rutaId === 'CR-BE' && this.temperatura === '0-MENOS-0') {
       this.horasDeServicio = 120;
       this.priecio = 3800;
-    } else if (this.ruta === 'CR-HI' && this.temperatura === '30-0-F') {
+      this.ruta = '';
+    } else if (this.rutaId === 'CR-HI' && this.temperatura === '30-0-F') {
       this.horasDeServicio = 144;
       this.priecio = 3000;
-    } else if (this.ruta === 'CR-HI' && this.temperatura === '0-MENOS-0') {
+      this.ruta = '';
+    } else if (this.rutaId === 'CR-HI' && this.temperatura === '0-MENOS-0') {
       this.horasDeServicio = 144;
       this.priecio = 3300;
-    } else if (this.ruta === 'CR-GU' && this.temperatura === '30-0-F') {
+      this.ruta = '';
+    } else if (this.rutaId === 'CR-GU' && this.temperatura === '30-0-F') {
       this.horasDeServicio = 120;
       this.priecio = 2500;
-    } else if (this.ruta === 'CR-GU' && this.temperatura === '0-MENOS-0') {
+      this.ruta = '';
+    } else if (this.rutaId === 'CR-GU' && this.temperatura === '0-MENOS-0') {
       this.horasDeServicio = 120;
       this.priecio = 2800;
-    } else if (this.ruta === 'CR-SV' && this.temperatura === '30-0-F') {
+      this.ruta = '';
+    } else if (this.rutaId === 'CR-SV' && this.temperatura === '30-0-F') {
       this.horasDeServicio = 96;
       this.priecio = 2000;
-    } else if (this.ruta === 'CR-SV' && this.temperatura === '0-MENOS-0') {
+      this.ruta = '';
+    } else if (this.rutaId === 'CR-SV' && this.temperatura === '0-MENOS-0') {
       this.horasDeServicio = 96;
       this.priecio = 2200;
-    } else if (this.ruta === 'CR-HO' && this.temperatura === '30-0-F') {
+      this.ruta = '';
+    } else if (this.rutaId === 'CR-HO' && this.temperatura === '30-0-F') {
       this.horasDeServicio = 72;
       this.priecio = 1800;
-    } else if (this.ruta === 'CR-HO' && this.temperatura === '0-MENOS-0') {
+      this.ruta = '';
+    } else if (this.rutaId === 'CR-HO' && this.temperatura === '0-MENOS-0') {
       this.horasDeServicio = 72;
       this.priecio = 2200;
-    } else if (this.ruta === 'CR-NI' && this.temperatura === '30-0-F') {
+      this.ruta = '';
+    } else if (this.rutaId === 'CR-NI' && this.temperatura === '30-0-F') {
       this.horasDeServicio = 48;
       this.priecio = 1400;
-    } else if (this.ruta === 'CR-NI' && this.temperatura === '0-MENOS-0') {
+      this.ruta = '';
+    } else if (this.rutaId === 'CR-NI' && this.temperatura === '0-MENOS-0') {
       this.horasDeServicio = 48;
       this.priecio = 1700;
+      this.ruta = '';
     } else if (this.temperatura === 'no-refrigerado') {
       this.horasDeServicio = 0;
       this.priecio = 0;
