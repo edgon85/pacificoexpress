@@ -133,8 +133,7 @@
         <div class="precio">
             <p *ngIf="horasDeServicio !== 0">Horas de servicio {{this.horasDeServicio}}</p>
             <h3 *ngIf="horasDeServicio !== 0">Total: <span>${{this.priecio}} USD</span></h3>
-            <p *ngIf="horasDeServicio === 0">En un momento un asesor se comunicara con ud para indicarle los precios de
-                transporte no refrigetado</p>
+            <p class="precio_horas-cero" *ngIf="horasDeServicio === 0">En un momento uno de nuestros asesores se comunicara con usted para indicarle los precios de transporte no refrigerado</p>
         </div>
         <div class="leyenda">
             <p>

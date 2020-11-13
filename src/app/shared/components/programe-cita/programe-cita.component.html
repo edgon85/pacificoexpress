@@ -13,9 +13,14 @@
             </p>
             <h2 class="h-phone">+(502) {{ phone }}</h2>
             <div class="btn-inline">
-                <button class="btn btn-border" href="#" data-toggle="modal" data-target="#appointmentForm">
+              <!--   <button class="btn btn-border" href="#" data-toggle="modal" data-target="#appointmentForm">
                     <span>Hacer cita</span></button>
-            </div>
+             -->
+            <a 
+            href="https://api.whatsapp.com/send?phone=502{{ phone }}" 
+            target="_blank" rel="noopener noreferrer"
+            class="btn btn-border"
+            ><span>Hacer cita</span></a></div>
         </div>
     </div>
 </section>

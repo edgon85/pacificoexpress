@@ -18,14 +18,14 @@ export class CotizadorComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.telefono = '12345678';
+    this.telefono = '54138835';
     this.leyenda = 'Especialistas en transporte refrigerado';
     this.eyelash1.nativeElement.classList.add('btnSelected');
     this.vehiculos = true;
   }
 
   selectEyelash1() {
-    this.telefono = '12345678';
+    this.telefono = '54138835';
     this.leyenda = 'Especialistas en transporte refrigerado';
     this.vehiculos = true;
     this.taller = false;
@@ -33,7 +33,7 @@ export class CotizadorComponent implements OnInit {
     this.eyelash2.nativeElement.classList.remove('btnSelected');
   }
   selectEyelash2() {
-    this.telefono = '87654321';
+    this.telefono = '56959818';
     this.leyenda = 'Especialistas en servicio de reparación y mantenimiento';
     this.vehiculos = false;
     this.taller = true;

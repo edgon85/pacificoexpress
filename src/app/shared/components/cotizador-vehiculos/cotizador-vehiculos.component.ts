@@ -136,7 +136,7 @@ export class CotizadorVehiculosComponent implements OnInit {
       icon: 'success',
       title: 'Solicitud enviada',
       text:
-        'En un momento un asesor se comunicara con ud para darle información sobre la ruta solicitada!',
+        `En un momento uno de nuestros asesores se comunicara con usted para darle información solicitada de la ruta entre ${this.forma.value.origen} y ${this.forma.value.destino}`,
     }).then((result) => {
       this.forma.reset({
         producto: '',

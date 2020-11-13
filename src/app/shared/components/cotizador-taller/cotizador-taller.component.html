@@ -19,7 +19,7 @@
                             <ng-container *ngIf="servicios$ | async as servicios">
                                 <!-- <option *ngFor="let ruta of rutas" [value]="ruta.id"> -->
                                 <option *ngFor="let servicio of servicios" [value]="servicio.id">
-                                    {{ servicio.nombre }}
+                                    {{ servicio.nombre | capitalizado:false}}
                                 </option>
                             </ng-container>
                         </select>
@@ -42,7 +42,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>{{ dataServic.nombre }}</td>
+                            <td>{{ dataServic.nombre | capitalizado:false }}</td>
                             <td>{{ dataServic.tiempoEstimado }}</td>
                             <td>Q{{ dataServic.precio | number: "1.2-2" }}</td>
                         </tr>
