@@ -112,7 +112,14 @@
   border-radius: 5px;
   padding: 5em;
 
+  .ruta{
+    text-align: center;
+  }
+
   .precio {
+    text-align: center;
+    border: 2px solid $primary-color;
+    padding: 1em;
     h3 {
       font-family: $font-primary;
       font-size: 2em;

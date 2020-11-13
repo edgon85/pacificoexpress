@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -32,19 +32,21 @@ export class CotizadorVehiculosComponent implements OnInit {
   ];
 
   temperaturas = [
-    { id: '30-0-F', name: 'REFRIGERADO (30 F) (0 C) O MÁS' },
-    { id: '0-MENOS-0', name: 'CONGELADO MENOS 0 C' },
+    { id: '30-0-F', name: 'REFRIGERADO (30 F) (0 ˚C) O MÁS' },
+    { id: '0-MENOS-0', name: 'CONGELADO MENOS 0 ˚C' },
     { id: 'no-refrigerado', name: 'NO REFRIGERADO' },
   ];
 
   formCotizado: boolean = true;
   detalleCotizado: boolean = false;
 
+  temperaturaId: string = '';
   temperatura: string = '';
   rutaId: string = '';
   ruta: string = '';
   horasDeServicio: number = 0;
   priecio: number = 0;
+  
 
   // formulario
   forma: FormGroup;
@@ -128,7 +130,7 @@ export class CotizadorVehiculosComponent implements OnInit {
 
     console.log(this.forma.value);
     this.rutaId = this.forma.value.ruta;
-    this.temperatura = this.forma.value.temperatura;
+    this.temperaturaId = this.forma.value.temperatura;
 
     Swal.fire({
       icon: 'success',
@@ -177,170 +179,208 @@ export class CotizadorVehiculosComponent implements OnInit {
 
     console.log(this.forma.value);
     this.rutaId = this.forma.value.ruta;
-    this.temperatura = this.forma.value.temperatura;
+    this.temperaturaId = this.forma.value.temperatura;
 
-    if (this.rutaId === 'HI-SV' && this.temperatura === '30-0-F') {
+    if (this.rutaId === 'HI-SV' && this.temperaturaId === '30-0-F') {
       this.horasDeServicio = 72;
       this.priecio = 1300;
       this.ruta = 'Ciudad Hidalgo M.X - El Salvador';
-    } else if (this.rutaId === 'HI-SV' && this.temperatura === '0-MENOS-0') {
+      this.temperatura = 'REFRIGERADO (30 F) (0 ˚C) O MÁS';
+    } else if (this.rutaId === 'HI-SV' && this.temperaturaId === '0-MENOS-0') {
       this.horasDeServicio = 72;
       this.priecio = 1600;
       this.ruta = 'Ciudad Hidalgo M.X - El Salvador';
-    } else if (this.rutaId === 'HI-HO' && this.temperatura === '30-0-F') {
+      this.temperatura = 'CONGELADO MENOS 0 ˚C';
+    } else if (this.rutaId === 'HI-HO' && this.temperaturaId === '30-0-F') {
       this.horasDeServicio = 96;
       this.priecio = 2100;
       this.ruta = 'Ciudad Hidalgo M.X - Tegucigalpa, Honduras';
-    } else if (this.rutaId === 'HI-HO' && this.temperatura === '0-MENOS-0') {
+      this.temperatura = 'REFRIGERADO (30 F) (0 ˚C) O MÁS';
+    } else if (this.rutaId === 'HI-HO' && this.temperaturaId === '0-MENOS-0') {
       this.horasDeServicio = 96;
       this.priecio = 2400;
       this.ruta = 'Ciudad Hidalgo M.X - Tegucigalpa, Honduras';
-    } else if (this.rutaId === 'HI-NI' && this.temperatura === '30-0-F') {
+      this.temperatura = 'CONGELADO MENOS 0 ˚C';
+    } else if (this.rutaId === 'HI-NI' && this.temperaturaId === '30-0-F') {
       this.horasDeServicio = 120;
       this.priecio = 2750;
       this.ruta = 'Ciudad Hidalgo M.X - Nicaragua';
-    } else if (this.rutaId === 'HI-NI' && this.temperatura === '0-MENOS-0') {
+      this.temperatura = 'REFRIGERADO (30 F) (0 ˚C) O MÁS';
+    } else if (this.rutaId === 'HI-NI' && this.temperaturaId === '0-MENOS-0') {
       this.horasDeServicio = 120;
       this.priecio = 2400;
       this.ruta = 'Ciudad Hidalgo M.X - Nicaragua';
-    } else if (this.rutaId === 'HI-CR' && this.temperatura === '30-0-F') {
+      this.temperatura = 'CONGELADO MENOS 0 ˚C';
+    } else if (this.rutaId === 'HI-CR' && this.temperaturaId === '30-0-F') {
       this.horasDeServicio = 144;
       this.priecio = 2850;
       this.ruta = 'Ciudad Hidalgo M.X - San José, Costa Rica';
-    } else if (this.rutaId === 'HI-CR' && this.temperatura === '0-MENOS-0') {
+      this.temperatura = 'REFRIGERADO (30 F) (0 ˚C) O MÁS';
+    } else if (this.rutaId === 'HI-CR' && this.temperaturaId === '0-MENOS-0') {
       this.horasDeServicio = 144;
       this.priecio = 3350;
       this.ruta = 'Ciudad Hidalgo M.X - San José, Costa Rica';
-    } else if (this.rutaId === 'HI-PA' && this.temperatura === '30-0-F') {
+      this.temperatura = 'CONGELADO MENOS 0 ˚C';
+    } else if (this.rutaId === 'HI-PA' && this.temperaturaId === '30-0-F') {
       this.horasDeServicio = 168;
       this.priecio = 3800;
       this.ruta = 'Ciudad Hidalgo M.X - Panamá';
-    } else if (this.rutaId === 'HI-PA' && this.temperatura === '0-MENOS-0') {
+      this.temperatura = 'REFRIGERADO (30 F) (0 ˚C) O MÁS';
+    } else if (this.rutaId === 'HI-PA' && this.temperaturaId === '0-MENOS-0') {
       this.horasDeServicio = 96;
       this.priecio = 4300;
       this.ruta = 'Ciudad Hidalgo M.X - Panamá';
-    } else if (this.rutaId === 'NI-HI' && this.temperatura === '30-0-F') {
+      this.temperatura = 'CONGELADO MENOS 0 ˚C';
+    } else if (this.rutaId === 'NI-HI' && this.temperaturaId === '30-0-F') {
       this.horasDeServicio = 96;
       this.priecio = 2300;
       this.ruta = 'Nicaragua - Ciudad Hidalgo M.X';
-    } else if (this.rutaId === 'NI-HI' && this.temperatura === '0-MENOS-0') {
+      this.temperatura = 'REFRIGERADO (30 F) (0 ˚C) O MÁS';
+    } else if (this.rutaId === 'NI-HI' && this.temperaturaId === '0-MENOS-0') {
       this.horasDeServicio = 96;
       this.priecio = 2650;
       this.ruta = 'Nicaragua - Ciudad Hidalgo M.X';
+      this.temperatura = 'CONGELADO MENOS 0 ˚C';
     } else if (
       this.rutaId === 'Guate-Teculutan' &&
-      this.temperatura === '30-0-F'
+      this.temperaturaId === '30-0-F'
     ) {
       this.horasDeServicio = 24;
       this.priecio = 500;
       this.ruta = 'Ciudad de Guatemala - Teculutan';
+      this.temperatura = 'REFRIGERADO (30 F) (0 ˚C) O MÁS';
     } else if (
       this.rutaId === 'Guate-Teculutan' &&
-      this.temperatura === '0-MENOS-0'
+      this.temperaturaId === '0-MENOS-0'
     ) {
       this.horasDeServicio = 24;
       this.priecio = 650;
       this.ruta = 'Ciudad de Guatemala - Teculutan';
-    } else if (this.rutaId === 'Guate-Xela' && this.temperatura === '30-0-F') {
+      this.temperatura = 'CONGELADO MENOS 0 ˚C';
+    } else if (this.rutaId === 'Guate-Xela' && this.temperaturaId === '30-0-F') {
       this.horasDeServicio = 24;
       this.priecio = 650;
       this.ruta = 'Ciudad de Guatemala - Quetzaltenango';
+      this.temperatura = 'REFRIGERADO (30 F) (0 ˚C) O MÁS';
     } else if (
       this.rutaId === 'Guate-Xela' &&
-      this.temperatura === '0-MENOS-0'
+      this.temperaturaId === '0-MENOS-0'
     ) {
       this.horasDeServicio = 24;
       this.priecio = 750;
       this.ruta = 'Ciudad de Guatemala - Quetzaltenango';
-    } else if (this.rutaId === 'GU-SV' && this.temperatura === '30-0-F') {
+      this.temperatura = 'CONGELADO MENOS 0 ˚C';
+    } else if (this.rutaId === 'GU-SV' && this.temperaturaId === '30-0-F') {
       this.horasDeServicio = 48;
       this.priecio = 1000;
       this.ruta = 'Ciudad de Guatemala - El Salvador';
-    } else if (this.rutaId === 'GU-SV' && this.temperatura === '0-MENOS-0') {
+      this.temperatura = 'REFRIGERADO (30 F) (0 ˚C) O MÁS';
+    } else if (this.rutaId === 'GU-SV' && this.temperaturaId === '0-MENOS-0') {
       this.horasDeServicio = 48;
       this.priecio = 1300;
       this.ruta = 'Ciudad de Guatemala - El Salvador';
-    } else if (this.rutaId === 'GU-HO' && this.temperatura === '30-0-F') {
+      this.temperatura = 'CONGELADO MENOS 0 ˚C';
+    } else if (this.rutaId === 'GU-HO' && this.temperaturaId === '30-0-F') {
       this.horasDeServicio = 72;
       this.priecio = 1700;
-      this.ruta = '';
-    } else if (this.rutaId === 'GU-HO' && this.temperatura === '0-MENOS-0') {
+      this.ruta = 'Ciudad de Guatemala - Honduras';
+      this.temperatura = 'REFRIGERADO (30 F) (0 ˚C) O MÁS';
+    } else if (this.rutaId === 'GU-HO' && this.temperaturaId === '0-MENOS-0') {
       this.horasDeServicio = 72;
       this.priecio = 2000;
-      this.ruta = '';
-    } else if (this.rutaId === 'GU-NI' && this.temperatura === '30-0-F') {
+      this.ruta = 'Ciudad de Guatemala - Honduras';
+      this.temperatura = 'CONGELADO MENOS 0 ˚C';
+    } else if (this.rutaId === 'GU-NI' && this.temperaturaId === '30-0-F') {
       this.horasDeServicio = 96;
       this.priecio = 2000;
-      this.ruta = '';
-    } else if (this.rutaId === 'GU-NI' && this.temperatura === '0-MENOS-0') {
+      this.ruta = 'Ciudad de Guatemala - Nicaragua';
+      this.temperatura = 'REFRIGERADO (30 F) (0 ˚C) O MÁS';
+    } else if (this.rutaId === 'GU-NI' && this.temperaturaId === '0-MENOS-0') {
       this.horasDeServicio = 96;
       this.priecio = 2350;
-      this.ruta = '';
-    } else if (this.rutaId === 'GU-CR' && this.temperatura === '30-0-F') {
+      this.ruta = 'Ciudad de Guatemala - Nicaragua';
+      this.temperatura = 'CONGELADO MENOS 0 ˚C';
+    } else if (this.rutaId === 'GU-CR' && this.temperaturaId === '30-0-F') {
       this.horasDeServicio = 120;
       this.priecio = 2500;
-      this.ruta = '';
-    } else if (this.rutaId === 'GU-CR' && this.temperatura === '0-MENOS-0') {
+      this.ruta = 'Ciudad de Guatemala - San José, Costa Rica';
+      this.temperatura = 'REFRIGERADO (30 F) (0 ˚C) O MÁS';
+    } else if (this.rutaId === 'GU-CR' && this.temperaturaId === '0-MENOS-0') {
       this.horasDeServicio = 120;
       this.priecio = 2900;
-      this.ruta = '';
-    } else if (this.rutaId === 'GU-PA' && this.temperatura === '30-0-F') {
+      this.ruta = 'Ciudad de Guatemala - San José, Costa Rica';
+      this.temperatura = 'CONGELADO MENOS 0 ˚C';
+    } else if (this.rutaId === 'GU-PA' && this.temperaturaId === '30-0-F') {
       this.horasDeServicio = 144;
       this.priecio = 3500;
-      this.ruta = '';
-    } else if (this.rutaId === 'GU-PA' && this.temperatura === '0-MENOS-0') {
+      this.ruta = 'Ciudad de Guatemala - Panamá';
+      this.temperatura = 'REFRIGERADO (30 F) (0 ˚C) O MÁS';
+    } else if (this.rutaId === 'GU-PA' && this.temperaturaId === '0-MENOS-0') {
       this.horasDeServicio = 144;
       this.priecio = 4000;
-      this.ruta = '';
-    } else if (this.rutaId === 'CR-BE' && this.temperatura === '30-0-F') {
+      this.ruta = 'Ciudad de Guatemala - Panamá';
+      this.temperatura = 'CONGELADO MENOS 0 ˚C';
+    } else if (this.rutaId === 'CR-BE' && this.temperaturaId === '30-0-F') {
       this.horasDeServicio = 120;
       this.priecio = 3200;
-      this.ruta = '';
-    } else if (this.rutaId === 'CR-BE' && this.temperatura === '0-MENOS-0') {
+      this.ruta = 'San José, Costa Rica - Belice';
+      this.temperatura = 'REFRIGERADO (30 F) (0 ˚C) O MÁS';
+    } else if (this.rutaId === 'CR-BE' && this.temperaturaId === '0-MENOS-0') {
       this.horasDeServicio = 120;
       this.priecio = 3800;
-      this.ruta = '';
-    } else if (this.rutaId === 'CR-HI' && this.temperatura === '30-0-F') {
+      this.ruta = 'San José, Costa Rica - Belice';
+      this.temperatura = 'CONGELADO MENOS 0 ˚C';
+    } else if (this.rutaId === 'CR-HI' && this.temperaturaId === '30-0-F') {
       this.horasDeServicio = 144;
       this.priecio = 3000;
-      this.ruta = '';
-    } else if (this.rutaId === 'CR-HI' && this.temperatura === '0-MENOS-0') {
+      this.ruta = 'San José, Costa Rica - Ciudad Hidalgo M.X';
+      this.temperatura = 'REFRIGERADO (30 F) (0 ˚C) O MÁS';
+    } else if (this.rutaId === 'CR-HI' && this.temperaturaId === '0-MENOS-0') {
       this.horasDeServicio = 144;
       this.priecio = 3300;
-      this.ruta = '';
-    } else if (this.rutaId === 'CR-GU' && this.temperatura === '30-0-F') {
+      this.ruta = 'San José, Costa Rica - Ciudad Hidalgo M.X';
+      this.temperatura = 'CONGELADO MENOS 0 ˚C';
+    } else if (this.rutaId === 'CR-GU' && this.temperaturaId === '30-0-F') {
       this.horasDeServicio = 120;
       this.priecio = 2500;
-      this.ruta = '';
-    } else if (this.rutaId === 'CR-GU' && this.temperatura === '0-MENOS-0') {
+      this.ruta = 'San José, Costa Rica - Ciudad de Guatemala';
+      this.temperatura = 'REFRIGERADO (30 F) (0 ˚C) O MÁS';
+    } else if (this.rutaId === 'CR-GU' && this.temperaturaId === '0-MENOS-0') {
       this.horasDeServicio = 120;
       this.priecio = 2800;
-      this.ruta = '';
-    } else if (this.rutaId === 'CR-SV' && this.temperatura === '30-0-F') {
+      this.ruta = 'San José, Costa Rica - Ciudad de Guatemala';
+      this.temperatura = 'CONGELADO MENOS 0 ˚C';
+    } else if (this.rutaId === 'CR-SV' && this.temperaturaId === '30-0-F') {
       this.horasDeServicio = 96;
       this.priecio = 2000;
-      this.ruta = '';
-    } else if (this.rutaId === 'CR-SV' && this.temperatura === '0-MENOS-0') {
+      this.ruta = 'San José, Costa Rica - El Salvador';
+      this.temperatura = 'REFRIGERADO (30 F) (0 ˚C) O MÁS';
+    } else if (this.rutaId === 'CR-SV' && this.temperaturaId === '0-MENOS-0') {
       this.horasDeServicio = 96;
       this.priecio = 2200;
-      this.ruta = '';
-    } else if (this.rutaId === 'CR-HO' && this.temperatura === '30-0-F') {
+      this.ruta = 'San José, Costa Rica - El Salvador';
+      this.temperatura = 'CONGELADO MENOS 0 ˚C';
+    } else if (this.rutaId === 'CR-HO' && this.temperaturaId === '30-0-F') {
       this.horasDeServicio = 72;
       this.priecio = 1800;
-      this.ruta = '';
-    } else if (this.rutaId === 'CR-HO' && this.temperatura === '0-MENOS-0') {
+      this.ruta = 'San José, Costa Rica - Tegucigalpa, Honduras';
+      this.temperatura = 'REFRIGERADO (30 F) (0 ˚C) O MÁS';
+    } else if (this.rutaId === 'CR-HO' && this.temperaturaId === '0-MENOS-0') {
       this.horasDeServicio = 72;
       this.priecio = 2200;
-      this.ruta = '';
-    } else if (this.rutaId === 'CR-NI' && this.temperatura === '30-0-F') {
+      this.ruta = 'San José, Costa Rica - Tegucigalpa, Honduras';
+      this.temperatura = 'CONGELADO MENOS 0 ˚C';
+    } else if (this.rutaId === 'CR-NI' && this.temperaturaId === '30-0-F') {
       this.horasDeServicio = 48;
       this.priecio = 1400;
-      this.ruta = '';
-    } else if (this.rutaId === 'CR-NI' && this.temperatura === '0-MENOS-0') {
+      this.ruta = 'San José, Costa Rica - Nicaragua';
+      this.temperatura = 'REFRIGERADO (30 F) (0 ˚C) O MÁS';
+    } else if (this.rutaId === 'CR-NI' && this.temperaturaId === '0-MENOS-0') {
       this.horasDeServicio = 48;
       this.priecio = 1700;
-      this.ruta = '';
-    } else if (this.temperatura === 'no-refrigerado') {
+      this.ruta = 'San José, Costa Rica - Nicaragua';
+      this.temperatura = 'CONGELADO MENOS 0 ˚C';
+    } else if (this.temperaturaId === 'no-refrigerado') {
       this.horasDeServicio = 0;
       this.priecio = 0;
     }

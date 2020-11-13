@@ -127,8 +127,8 @@
 
     <div class="detalle-cotizado" *ngIf="detalleCotizado">
         <div class="ruta">
-
             <h3>{{ ruta }}</h3>
+            <h5>{{ temperatura | lowercase }}</h5>
         </div>
         <div class="precio">
             <p *ngIf="horasDeServicio !== 0">Horas de servicio {{this.horasDeServicio}}</p>
