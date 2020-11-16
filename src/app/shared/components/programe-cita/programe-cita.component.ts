@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ProgrameCitaComponent implements OnInit {
   @Input() phone: string = '';
   @Input() text: string = '';
+  @Input() textButton: string = '';
 
   constructor() {}
 

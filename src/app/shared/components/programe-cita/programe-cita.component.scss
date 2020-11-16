@@ -41,7 +41,7 @@
     line-height: 44px;
     font-weight: 600;
     margin: 0 0 35px;
-    color: #292929;
+    color: $primary-color;
     .color {
       color: #efe300;
     }
@@ -57,6 +57,7 @@
     padding-left: 10px;
     padding-right: 10px;
     margin-bottom: 26px;
+    color: $primary-color;
   }
 
   p.info + h2.h-phone {
