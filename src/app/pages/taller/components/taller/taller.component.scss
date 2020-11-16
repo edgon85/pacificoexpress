@@ -4,7 +4,6 @@
   // padding: 5em 0;
   padding-top: 3em;
 
-
   .myContainer {
     display: flex;
     flex-direction: column;
@@ -138,6 +137,57 @@
       font-family: "Poppins", sans-serif;
       text-transform: inherit;
       max-width: inherit;
+    }
+  }
+}
+
+.make_quote {
+  // border: 1px solid red;
+  // padding: 2em;
+  margin-top: 6em;
+  margin-bottom: 2em;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-template-areas: "quote image_quote";
+
+  .make-quote-text {
+    grid-area: quote;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2em;
+    background: #f5f5f5;
+
+    h3 {
+      font-size: 3em;
+      font-weight: 600;
+      span {
+        color: #efe300;
+      }
+    }
+
+    .btn {
+      &:hover {
+        color: #efe300;
+      }
+    }
+  }
+
+  .make-quote-image {
+    grid-area: image_quote;
+    background-image: url("../../../../../assets/images/taller/make_quote.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+    padding: 0;
+
+    img {
+      width: 100%;
+      vertical-align: top;
     }
   }
 }
