@@ -12,20 +12,29 @@ export class CotizadorComponent implements OnInit {
   vehiculos: boolean = false;
   taller: boolean = false;
 
+  telefono: string = '';
+  leyenda: string = '';
+
   constructor() {}
 
   ngOnInit(): void {
+    this.telefono = '54138835';
+    this.leyenda = 'Especialistas en transporte refrigerado';
     this.eyelash1.nativeElement.classList.add('btnSelected');
     this.vehiculos = true;
   }
 
   selectEyelash1() {
+    this.telefono = '54138835';
+    this.leyenda = 'Especialistas en transporte refrigerado';
     this.vehiculos = true;
     this.taller = false;
     this.eyelash1.nativeElement.classList.add('btnSelected');
     this.eyelash2.nativeElement.classList.remove('btnSelected');
   }
   selectEyelash2() {
+    this.telefono = '56959818';
+    this.leyenda = 'Especialistas en servicio de reparación y mantenimiento';
     this.vehiculos = false;
     this.taller = true;
     this.eyelash1.nativeElement.classList.remove('btnSelected');

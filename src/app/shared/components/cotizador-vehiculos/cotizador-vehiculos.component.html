@@ -14,7 +14,7 @@
                 <label>Ruta</label>
                 <div class="content-input">
                     <div class="custom-selector">
-                        <select class="selector" formControlName="ruta" name="">
+                        <select class="selector" formControlName="ruta" name="" #f (change)="changeValueRuta(f.value)">
                             <option value="" disabled selected hidden>Seleccione una opción</option>
                             <option *ngFor="let ruta of rutas" [value]="ruta.id">
                                 {{ ruta.name }}
@@ -22,6 +22,20 @@
                         </select>
                     </div>
                     <small *ngIf="validarCampo('ruta')" class="text-danger">* Este campo es requerido</small>
+                </div>
+            </div>
+            <div class="input-field" *ngIf="noRuta">
+                <label>Origen</label>
+                <div class="content-input">
+                    <input formControlName="origen" type="text" class="input" placeholder="Ciudad de origen" />
+                    <!-- <small *ngIf="validarCampo('nombre')" class="text-danger">* Este campo es requerido</small> -->
+                </div>
+            </div>
+            <div class="input-field" *ngIf="noRuta">
+                <label>Destino</label>
+                <div class="content-input">
+                    <input formControlName="destino" type="text" class="input" placeholder="Ciudad de destino" />
+                    <!-- <small *ngIf="validarCampo('nombre')" class="text-danger">* Este campo es requerido</small> -->
                 </div>
             </div>
             <div class="input-field">
@@ -60,12 +74,12 @@
                     <div class="inlines">
                         <div>
                             <input formControlName="medidasFurgon" type="radio" name="medidasFurgon"
-                                id="medidadsFurgon1" value="option1" />
+                                id="medidadsFurgon1" value="48 pies" />
                             <label for="medidadsFurgon1">48 pies</label>
                         </div>
                         <div>
                             <input formControlName="medidasFurgon" type="radio" name="medidasFurgon"
-                                id="medidadsFurgon2" value="option2" />
+                                id="medidadsFurgon2" value="53 pies" />
                             <label for="medidadsFurgon2">53 pies</label>
                         </div>
                     </div>
@@ -106,14 +120,20 @@
         </form>
         <div class="input-field" *ngIf="!detalleCotizado">
             <!-- <div class="input-field"> -->
-            <button (click)="btnCotizar()" class="btn-cotizar">Cotizar</button>
+            <button *ngIf="!noRuta" (click)="btnCotizar()" class="btn-cotizar">Cotizar</button>
+            <button *ngIf="noRuta" (click)="btnCotizar2()" class="btn-cotizar">Cotizar</button>
         </div>
     </div>
 
     <div class="detalle-cotizado" *ngIf="detalleCotizado">
+        <div class="ruta">
+            <h3>{{ ruta }}</h3>
+            <h5>{{ temperatura | lowercase }}</h5>
+        </div>
         <div class="precio">
-            <p>Horas de servicio {{this.horasDeServicio}}</p>
-            <h3>Total: <span>${{this.priecio}} USD</span></h3>
+            <p *ngIf="horasDeServicio !== 0">Horas de servicio {{this.horasDeServicio}}</p>
+            <h3 *ngIf="horasDeServicio !== 0">Total: <span>${{this.priecio}} USD</span></h3>
+            <p class="precio_horas-cero" *ngIf="horasDeServicio === 0">En un momento uno de nuestros asesores se comunicara con usted para indicarle los precios de transporte no refrigerado</p>
         </div>
         <div class="leyenda">
             <p>

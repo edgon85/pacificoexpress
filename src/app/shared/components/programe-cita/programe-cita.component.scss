@@ -1,0 +1,78 @@
+@import "../../../../assets/variables.scss";
+
+.overflow-hidden {
+  overflow: hidden;
+}
+.position-relative {
+  position: relative;
+}
+.block {
+  margin-bottom: 120px;
+}
+.schedule {
+  margin-top: 3em;
+  .section__text-background {
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+    font-family: $font-primary;
+    font-weight: 700;
+    line-height: 18px;
+    white-space: nowrap;
+    pointer-events: none;
+    font-size: 180px;
+
+    &.text-background__center {
+      top: 50%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+    }
+    &.text-color02 {
+      color: #232323;
+      opacity: 0.05;
+    }
+  }
+
+  .h-lg {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 44px;
+    line-height: 44px;
+    font-weight: 600;
+    margin: 0 0 35px;
+    color: #292929;
+    .color {
+      color: #efe300;
+    }
+  }
+
+  h2 + p.info {
+    margin-top: -30px;
+  }
+
+  .info {
+    font-size: 16px;
+    line-height: 24px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 26px;
+  }
+
+  p.info + h2.h-phone {
+    font-weight: 500;
+
+    font-size: 30px;
+  }
+
+  .btn-inline {
+    .btn {
+      outline: none;
+    }
+    .btn-border {
+      &:hover {
+        color: #efe300;
+      }
+    }
+  }
+}
