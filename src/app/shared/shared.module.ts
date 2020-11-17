@@ -12,6 +12,7 @@ import { CotizadorTallerComponent } from './components/cotizador-taller/cotizado
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProgrameCitaComponent } from './components/programe-cita/programe-cita.component';
 import { CapitalizadoPipe } from '../pipes/capitalizado.pipe';
+import { BannerAliadosComponent } from './components/banner-aliados/banner-aliados.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CapitalizadoPipe } from '../pipes/capitalizado.pipe';
     CotizadorVehiculosComponent,
     CotizadorTallerComponent,
     ProgrameCitaComponent,
-    CapitalizadoPipe
+    CapitalizadoPipe,
+    BannerAliadosComponent,
   ],
   imports: [RouterModule, CommonModule, FormsModule, ReactiveFormsModule],
   exports: [
@@ -37,7 +39,8 @@ import { CapitalizadoPipe } from '../pipes/capitalizado.pipe';
     CotizadorVehiculosComponent,
     CotizadorTallerComponent,
     ProgrameCitaComponent,
-    CapitalizadoPipe
+    CapitalizadoPipe,
+    BannerAliadosComponent,
   ],
 })
 export class SharedModule {}

@@ -3,7 +3,193 @@
 .transportes {
   min-height: 80vh;
 
-  padding: 2em 0;
+  // padding: 2em 0;
+
+  .slides {
+    .swiper-container {
+      .swiper-wrapper {
+        .swiper-slide {
+          margin-top: 1em;
+          height: 100vh;
+          z-index: 0;
+          background-color: green;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: 0 4em;
+          .overlay {
+            /*  position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 1); */
+            background: -webkit-gradient(
+              linear,
+              left top,
+              right top,
+              color-stop(25%, #00000099),
+              color-stop(90%, transparent)
+            );
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 10;
+
+            .contenido {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: flex-start;
+              height: 100%;
+              .slide-1 {
+                overflow: hidden;
+                padding: 1rem 4rem;
+                margin-left: 4rem;
+                border: 3px solid $primary-color;
+                background-color: rgba(232, 232, 232, 0.7);
+                position: relative;
+
+                /*   &::before {
+                  content: "";
+                  display: block;
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  width: 50%;
+                  border-bottom: 2px solid red;
+                  border-left: 1px solid red;
+                } */
+
+                &::after {
+                  content: "";
+                  display: block;
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  width: 50%;
+                  border-right: 1px solid green;
+                }
+                /* 
+                h2 {
+                  text-transform: uppercase;
+                  color: $secondary-color;
+                  font-size: 72px;
+                }
+  
+                p {
+                  color: $secondary-color;
+                } */
+              }
+            }
+
+            .contenido-2 {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              height: 100%;
+              .slide-1 {
+                overflow: hidden;
+                padding: 1rem 4rem;
+                //   margin-right: 4rem;
+                border: 3px solid $secondary-color;
+                position: relative;
+                background-color: rgba(232, 232, 232, 0.7);
+
+                h2 {
+                  color: $secondary-color;
+                }
+
+                p {
+                  color: $secondary-color;
+                }
+              }
+            }
+          }
+
+          .contenido-banner {
+            // border: 1px solid red;
+            z-index: 50;
+            .slide-title {
+              max-width: 655px;
+              h2 {
+                font-size: 65px;
+                line-height: 1.13em;
+                color: #fff;
+                margin: 0 0 0.57em;
+                // font-family: $font-primary;
+                // font-weight: 600;
+                font-family: "bebas_kai";
+                text-transform: uppercase;
+              }
+            }
+            .slide-text {
+              max-width: 520px;
+              p {
+                // font-family: "Now";
+                font-size: 20px;
+                font-size: 1.25rem;
+                line-height: 1.5em;
+                color: #fff;
+                margin: 0 0 1.8em;
+              }
+            }
+
+            .btn {
+              width: 200px;
+              background-color: #efe300;
+              color: $primary-color;
+              // border: 1px solid red;
+              &:hover {
+                background-color: $secondary-color;
+                color: $color-white;
+              }
+            }
+            .slide-btns {
+              transition-duration: 0ms;
+              transform: translate3d(0px, 0px, 0px);
+
+              background-image: linear-gradient(
+                to right,
+                #25aae1,
+                #4481eb,
+                #04befe,
+                #3f86ed
+              );
+              margin: 0;
+              display: inline-block;
+              .wpo-theme-btn {
+                width: 200px;
+                font-size: 16px;
+                font-weight: 600;
+                color: #fff;
+                cursor: pointer;
+                height: 55px;
+                text-align: center;
+                text-transform: uppercase;
+                border: none;
+                background-size: 300% 100%;
+                border-radius: 50px;
+                // moz-transition: all 0.4s ease-in-out;
+                -o-transition: all 0.4s ease-in-out;
+                -webkit-transition: all 0.4s ease-in-out;
+                transition: all 0.4s ease-in-out;
+                display: block;
+                line-height: 55px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 
   .transportes_header {
     display: flex;
@@ -88,9 +274,12 @@
   }
 
   .transportes__body-sections-2 {
-    margin-top: 3em;
+    // margin-top: 3em;
     // height: 500px;
     background: #f7f9fc;
+    // padding-left: 2em;
+    // padding-right: 2em;
+    padding-bottom: 2em;
 
     .section-2-content {
       display: grid;
@@ -117,8 +306,8 @@
             line-height: 1.4em;
             text-transform: uppercase;
 
-            span{
-                color: #efe300;
+            span {
+              color: #efe300;
             }
           }
         }
@@ -128,7 +317,7 @@
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-/*         background-image: url('https://codeglamour.com/html/18/transbizz/img/promo/promo_top_bg.png');
+        /*         background-image: url('https://codeglamour.com/html/18/transbizz/img/promo/promo_top_bg.png');
         background-repeat: no-repeat;
         background-position: left bottom;
         background-size: cover; */
@@ -137,9 +326,9 @@
           margin-top: 20px;
           padding-top: 20px;
           padding-left: 20px;
-        //   width: 70%;
+          //   width: 70%;
           height: 100%;
-        //   background: rgba(239, 227, 0, .8);
+          //   background: rgba(239, 227, 0, .8);
           h3 {
             margin: 0 0 15px;
             font-weight: 700;
@@ -147,7 +336,7 @@
             text-transform: uppercase;
           }
 
-          p{
+          p {
             margin: 0 0 10px;
           }
 
@@ -155,48 +344,138 @@
             margin-top: 40px;
             padding-right: 10px;
             li {
-                margin-bottom: 15px;
-                font-size: 12px;
+              margin-bottom: 15px;
+              font-size: 12px;
             }
+          }
         }
+      }
+    }
+  }
+
+  .quienes-somos {
+    // height: 80vh;
+    // border: 1px solid yellowgreen;
+    margin-top: 2em;
+    padding: 4em 0;
+    .contenido {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 1fr;
+      gap: 1fr;
+      grid-template-areas: "body map";
+
+      .contenido__text {
+        grid-area: body;
+        &-title {
+          font-weight: 500;
+          font-style: normal;
+          font-family: "Poppins", sans-serif;
+          color: $primary-color;
+          // color: red;
+          font-size: 30px;
+          line-height: 1.3;
+          letter-spacing: 0px;
+          padding-bottom: 0.5em;
+          text-transform: uppercase;
+        }
+
+        &-body {
+          font-weight: 400;
+          font-style: normal;
+          font-family: "Poppins", sans-serif;
+          color: #2e2e2e;
+          font-size: 16px;
+          line-height: 1.6;
+          letter-spacing: 0px;
+        }
+        &-subbody {
+          font-weight: 400;
+          font-style: normal;
+          font-family: "Poppins", sans-serif;
+          color: #adadad;
+          font-size: 14px;
+          line-height: 1.6;
+          letter-spacing: 0px;
+        }
+
+        &-experiencia {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(2, 1fr);
+
+          .square {
+            span {
+              font-weight: 400;
+              font-style: normal;
+              font-family: "Poppins", sans-serif;
+              color: $secondary-color;
+              font-size: 40px;
+              line-height: 1.5;
+              letter-spacing: 0px;
+            }
+            p {
+              font-weight: 400;
+              font-style: normal;
+              font-family: "Poppins", sans-serif;
+              color: #adadad;
+              font-size: 14px;
+              line-height: 1.6;
+              letter-spacing: 0px;
+            }
+          }
+        }
+      }
+
+      .contenido-mapa {
+        grid-area: map;
+        margin: auto;
+        .image {
+          width: 100%;
+          img {
+            width: 100%;
+            vertical-align: top;
+          }
         }
       }
     }
   }
 }
 
+.bottom {
+  background-image: url(../../../../../assets/images/transporte/bg-1.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
 
-.bottom{
-    background-image: url(../../../../../assets/images/transporte/bg-1.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  h2 {
+    color: #fff;
+    font-family: $font-primary;
+  }
 
-    h2{
-        color: #fff;
-        font-family: $font-primary;
-    }
-
-    .btn-transports {
-        width: 8em;
-        padding: 10px 15px;
-        margin: 0 2px 0 0;
-        font-size: 1em;
-        color: #5d6b82;
-        border: transparent;
-        background: transparent;
-        text-transform: uppercase;
-      }
-
+  .btn-transports {
+    // width: 8em;
+    padding: 10px 15px;
+    margin: 0 2px 0 0;
+    font-size: 1em;
+    color: #5d6b82;
+    border: transparent;
+    background: transparent;
+    text-transform: uppercase;
+  }
 }
 
 .selected {
   background: #efe300 !important;
   color: $primary-color !important;
+}
+
+a {
+  text-decoration: none;
 }

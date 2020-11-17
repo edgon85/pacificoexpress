@@ -1,0 +1,26 @@
+<div class="aliados">
+    <div class="aliados__title">
+        <h3>Nuestros clientes</h3>
+    </div>
+    <div class="aliados__banner myContainer">
+        <div class="slides">
+            <!-- Slider main container -->
+            <div class="swiper-container-aliados">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <ng-container *ngFor="let marca of marcas; let i = index">
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-body">
+                                    <img [src]="marca" alt="">
+                                    <!-- <p>slide 1</p> -->
+                                </div>
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

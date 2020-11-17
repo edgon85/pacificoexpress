@@ -1,69 +1,35 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ElementRef, AfterViewInit } from '@angular/core';
+import Swiper from 'swiper';
 
 @Component({
   selector: 'app-transportes',
   templateUrl: './transportes.component.html',
-  styleUrls: ['./transportes.component.scss']
+  styleUrls: ['./transportes.component.scss'],
 })
-export class TransportesComponent implements OnInit {
+export class TransportesComponent implements OnInit, AfterViewInit {
+  images: string[] = [
+    'assets/images/transporte/banner-1.jpg',
+    'assets/images/transporte/banner-2.jpg',
+    'assets/images/banner/slide-1.png',
+    'assets/images/banner/slide01.jpg',
+    'assets/images/banner/slide-3.jpg',
+  ];
 
-  btn_1: boolean = false;
-  btn_2: boolean = false;
-  btn_3: boolean = false;
-  btn_4: boolean = false;
+  mySwiper: Swiper;
 
+  constructor() {}
 
-  @ViewChild('eyelash1', { static: true }) eyelash1: ElementRef;
-  @ViewChild('eyelash2', { static: true }) eyelash2: ElementRef;
-  @ViewChild('eyelash3', { static: true }) eyelash3: ElementRef;
-  @ViewChild('eyelash4', { static: true }) eyelash4: ElementRef;
+  ngOnInit(): void {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-    this.eyelash1.nativeElement.classList.add('selected');
-    this.btn_1 = true;
-  }
-
-  selectEyelash1(){
-    this.btn_1 = true;
-    this.btn_2 = false;
-    this.btn_3 = false;
-    this.btn_4 = false;
-    this.eyelash1.nativeElement.classList.add('selected');
-    this.eyelash2.nativeElement.classList.remove('selected');
-    this.eyelash3.nativeElement.classList.remove('selected');
-    this.eyelash4.nativeElement.classList.remove('selected');
-  }
-  selectEyelash2(){
-    this.btn_1 = false;
-    this.btn_2 = true;
-    this.btn_3 = false;
-    this.btn_4 = false;
-    this.eyelash1.nativeElement.classList.remove('selected');
-    this.eyelash2.nativeElement.classList.add('selected');
-    this.eyelash3.nativeElement.classList.remove('selected');
-    this.eyelash4.nativeElement.classList.remove('selected');
-  }
-  selectEyelash3(){
-    this.btn_1 = false;
-    this.btn_2 = false;
-    this.btn_3 = true;
-    this.btn_4 = false;
-    this.eyelash1.nativeElement.classList.remove('selected');
-    this.eyelash2.nativeElement.classList.remove('selected');
-    this.eyelash3.nativeElement.classList.add('selected');
-    this.eyelash4.nativeElement.classList.remove('selected');
-  }
-  selectEyelash4(){
-      this.btn_1 = false;
-      this.btn_2 = false;
-      this.btn_3 = false;
-      this.btn_4 = true;
-      this.eyelash1.nativeElement.classList.remove('selected');
-      this.eyelash2.nativeElement.classList.remove('selected');
-      this.eyelash3.nativeElement.classList.remove('selected');
-      this.eyelash4.nativeElement.classList.add('selected');
-    
+  ngAfterViewInit(): void {
+    this.mySwiper = new Swiper('.swiper-container', {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      loop: false,
+      autoplay: {
+        delay: 5000,
+        // disableOnInteraction: false,
+      },
+    });
   }
 }
