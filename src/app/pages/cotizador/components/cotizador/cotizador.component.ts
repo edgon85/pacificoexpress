@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-cotizador',
@@ -15,13 +17,18 @@ export class CotizadorComponent implements OnInit {
   telefono: string = '';
   leyenda: string = '';
 
-  constructor() {}
+  paramTaller: any;
+
+  constructor(private route: ActivatedRoute) {
+    this.paramTaller = this.route.snapshot.paramMap.get('isTaller');
+  }
 
   ngOnInit(): void {
-    this.telefono = '54138835';
-    this.leyenda = 'Especialistas en transporte refrigerado';
-    this.eyelash1.nativeElement.classList.add('btnSelected');
-    this.vehiculos = true;
+    if (this.paramTaller === 'true') {
+      this.selectEyelash2();
+    } else {
+      this.selectEyelash1();
+    }
   }
 
   selectEyelash1() {

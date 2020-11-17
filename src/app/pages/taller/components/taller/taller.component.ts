@@ -5,20 +5,18 @@ import { TallerService } from '../../../../services/taller.service';
 @Component({
   selector: 'app-taller',
   templateUrl: './taller.component.html',
-  styleUrls: ['./taller.component.scss']
+  styleUrls: ['./taller.component.scss'],
 })
 export class TallerComponent implements OnInit {
-
   servicios$: Observable<any[]>;
 
-  constructor(private tallerService: TallerService) { }
+  constructor(private tallerService: TallerService) {}
 
   ngOnInit(): void {
     this.obtenerServiciosDeTaller();
   }
 
-  obtenerServiciosDeTaller(){
+  obtenerServiciosDeTaller() {
     this.servicios$ = this.tallerService.getAllRepuestos();
   }
-
 }
