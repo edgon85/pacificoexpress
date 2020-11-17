@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs/internal/Observable';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -21,7 +21,8 @@ export class RepuestosDetailComponent implements OnInit {
 
   constructor(
     private productService: ProductService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {
     this.route.params.subscribe((param) => {
       this.param = param['id'];
@@ -46,5 +47,9 @@ export class RepuestosDetailComponent implements OnInit {
 
   rerrarModal() {
     this.ocultarModal = true;
+  }
+
+  returnPage() {
+    this.router.navigateByUrl('/repuestos');
   }
 }
