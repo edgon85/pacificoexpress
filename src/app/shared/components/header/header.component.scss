@@ -1,5 +1,9 @@
 @import "../../../../assets/variables.scss";
 
+a {
+  text-decoration: none;
+}
+
 .header-top {
   background: $primary-color;
   .myContainer {
@@ -79,11 +83,11 @@
   .logo {
     height: 8rem;
     padding: 2px 0px;
-    cursor: pointer;
     outline: none;
     img {
-      width: 40%;
+      width: 30%;
       height: 100%;
+      cursor: pointer;
     }
   }
 
@@ -168,4 +172,9 @@
       }
     }
   }
+}
+
+.active {
+  color: $color-white !important;
+  background: $primary-color;
 }
