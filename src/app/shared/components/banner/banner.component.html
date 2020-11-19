@@ -5,27 +5,31 @@
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
             <!-- Slides -->
+            <div class="swiper-slide" [ngStyle]="{'background-image': 'url(' + images[0] + ')'}">
+                <div class="overlay">
+                    <div class="contenido">
+                        <div class="slide-1">
+                            <h4>Somos una importadora</h4>
+                            <h3>de equipo pesado</h3>
+                            <p>Más de 20 años importando equipo de alta calidad</p>
+                            <a href="#" class="btn-banner">ver vehículos</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="swiper-slide" [ngStyle]="{'background-image': 'url(' + images[1] + ')'}">
                 <div class="overlay">
-                    <div class="contenido animate__animated animate__backInLeft ">
+                    <div class="contenido">
                         <div class="slide-1">
-                            <h2>Vehículos</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <h4>Buscando el repuesto adecuado</h4>
+                            <h3>venta de repuestos usados importados</h3>
+                            <p>Obtenga sus repuestos a precio justo</p>
+                            <a href="#" class="btn-banner">Ver repuestos</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="swiper-slide" [ngStyle]="{'background-image': 'url(' + images[3] + ')'}">
-                <div class="overlay">
-                    <div class="contenido-2 animate__animated animate__backInLeft ">
-                        <div class="slide-1">
-                            <h2>Taller</h2>
-                            <p>Lorem ipsum dolor sit amet.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide" [ngStyle]="{'background-image': 'url(' + images[2] + ')'}">
+            <!-- <div class="swiper-slide" [ngStyle]="{'background-image': 'url(' + images[2] + ')'}">
                 <div class="overlay">
                     <div class="contenido animate__animated animate__backInLeft ">
                         <div class="slide-1">
@@ -34,7 +38,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!--<div class="swiper-slide">Slide 3</div> -->
         </div>
     </div>

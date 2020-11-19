@@ -9,8 +9,8 @@ import Swiper from 'swiper';
 })
 export class BannerComponent implements OnInit, AfterViewInit {
   images: string[] = [
-    'assets/images/banner/slide-2.png',
-    'assets/images/banner/slide-1.png',
+    'assets/images/banner/slide-p.jpg',
+    'assets/images/banner/slide-p2.jpg',
     'assets/images/banner/slide01.jpg',
     'assets/images/banner/slide-3.jpg',
   ];
@@ -27,7 +27,7 @@ export class BannerComponent implements OnInit, AfterViewInit {
       spaceBetween: 30,
       loop: false,
       autoplay: {
-        delay: 3000,
+        delay: 5000,
         disableOnInteraction: false,
       },
     });

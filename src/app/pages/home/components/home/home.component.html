@@ -1,7 +1,7 @@
 <app-header></app-header>
 <app-banner></app-banner>
 
-<section class="services">
+<!-- <section class="services">
   <div class="title">
     <h2>Nuestros servicios</h2>
   </div>
@@ -21,11 +21,11 @@
       </div>
     </div>
 
-    <!-- <div class="divider">
+    <!- - <div class="divider">
         <hr> 
-        </div>-->
+        </div>- ->
 
-    <!-- Overlay Text-->
+    <!- - Overlay Text- ->
     <div class="section-b">
       <div class="overlay">
         <div class="section-b-inner">
@@ -57,11 +57,11 @@
     </div>
   </div>
 
-  <!-- Overlay Text-->
+  <!- - Overlay Text- ->
   <div class="section-c">
     <div class="overlay">
       <div class="section-b-inner">
-        <!-- <h3>Repuestos</h3> -->
+
         <h2>Fletes</h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, quo
@@ -88,7 +88,67 @@
       <a href="#" class="big"><img src="assets/images/galery/team-1.jpg" alt="" /></a>
     </div>
   </div>
-</section>
+</section> -->
 
+<div class="home-content">
+  <section class="taller">
+    <div class="header-title">
+      <div class="myContainer">
+        <h2>Servicios de reparación</h2>
+        <p>
+          Nuestro objetivo es ganarnos su confianza y tener una relación a largo
+          plazo con usted
+        </p>
+        <div class="title-separator"></div>
+      </div>
+    </div>
+    <div class="taller-content">
+      <section class="myContainer">
+        <div class="make_quote">
+          <div class="make-quote-text">
+            <h3>Servicios de <span>reparación</span> que ofrecemos</h3>
+            <p>
+              Ofrecemos una gama completa de reparaciones mecánicas frontales
+              para todas las marcas y modelos de automóviles, sin importar la
+              causa. Esto incluye todo, desde puntales, amortiguadores y
+              extremos de barra de dirección hasta rótulas, resortes y
+              básicamente todo lo que se incluye en la reparación de la parte
+              delantera del vehículo.
+            </p>
+            <a [routerLink]="['/cotizador', { isTaller: true }]" class="btn">Realizar una cotización</a>
+          </div>
+          <div class="make-quote-image">
+            <div class="content-image">
+              <div class="overlay"></div>
+              <div class="list-taller">
+                <div class="list">
+                  <ul>
+                    <li><i class="fas fa-check"></i> {{'cambio de caja ' | capitalizado: false}}</li>
+                    <li><i class="fas fa-check"></i> {{'cambio de resortaje delantero' | capitalizado: false}}</li>
+                    <li><i class="fas fa-check"></i> {{'diagnostico de camion' | capitalizado: false}}</li>
+                    <li><i class="fas fa-check"></i> {{'cambio de catarinas' | capitalizado: false}}</li>
+                    <li><i class="fas fa-check"></i> {{'cambio de bloqueo' | capitalizado: false}}</li>
+                    <li><i class="fas fa-check" class="color: trasparent;"></i></li>
+                  </ul>
+                </div>
+                <div class="list">
+                  <ul>
+                    <li><i class="fas fa-check"></i> {{ 'cambio de flechas' | capitalizado: false }}</li>
+                    <li><i class="fas fa-check"></i> {{ 'cambio de cruz' | capitalizado: false }}</li>
+                    <li><i class="fas fa-check"></i> {{ 'cambio de bufas traseras' | capitalizado: false }}</li>
+                    <li><i class="fas fa-check"></i> {{ 'cambio de tornamesa' | capitalizado: false }}</li>
+                    <li><i class="fas fa-check"></i> {{ 'cambio de resortaje trasero' | capitalizado: false }}</li>
+                    <li> <a [routerLink]="['/cotizador', { isTaller: true }]">Ver más</a></li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+</div>
 
 <app-footer></app-footer>
