@@ -150,17 +150,17 @@
 
 
       <section class="appointment myContainer">
-        <div class="programar-cita">
+        <div class="programar-cita" ngsRevealSet [ngsRevealSet]="{ reset:true, origin: 'top' }" [ngsSelector]="'.programar-cita'">
           <app-programe-cita textButton="Programar cita" phone="56959818"
             text="Especialistas en servicio de reparación y mantenimiento"></app-programe-cita>
         </div>
-        <div class="image">
+        <div class="image" ngsReveal [ngsRevealSet]="{ reset:true, origin: 'top' }" [ngsSelector]="'.image'">
           <img src="assets/images/home/camion-1.png" alt="">
         </div>
       </section>
 
 
-      <div class="bottom">
+      <div class="bottom" ngsReveal [ngsRevealSet]="{ reset:true, origin: 'top' }" [ngsInterval]="50" [ngsSelector]="'.bottom'">
         <h2>PROPORCIONAMOS SERVICIO DE CARGA Y LOGÍSTICA EN MEXICO Y CENTRO AMERICA</h2>
         <a href="#" class="btn btn-transports selected">Contactanos</a>
       </div>
@@ -174,7 +174,7 @@
               sacarle provecho a tu presupuesto</p>
           </div>
           <div class="video">
-            <iframe src="https://player.vimeo.com/video/481099138?autoplay=1&loop=1?title=1&amp;byline=0&amp;portrait=0&amp;color=ffffff" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" frameborder="0"></iframe>
+            <!-- <iframe src="https://player.vimeo.com/video/481099138?autoplay=1&loop=1?title=1&amp;byline=0&amp;portrait=0&amp;color=ffffff" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" frameborder="0"></iframe> -->
           </div>
         </section>
       </div>
